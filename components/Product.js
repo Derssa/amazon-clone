@@ -1,21 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Currency from "react-currency-formatter";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../redux/slices/basketSlice";
 
 function Product({ id, title, price, description, category, image }) {
+  const dispatch = useDispatch();
   const MAX_RATING = 5;
   const MIN_RATING = 1;
-  const [rating] = useState(
-    Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
-  );
-  const [hasPrime] = useState(Math.random() < 0.5);
+  const [rating, setRating] = useState(0);
+  const [hasPrime, setHasPrime] = useState(false);
+
+  useEffect(() => {
+    setRating(
+      Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
+    );
+    setHasPrime(Math.random() < 0.5);
+  }, []);
+
+  const addItemToBasket = () => {
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+      rating,
+      hasPrime,
+    };
+    dispatch(addToBasket(product));
+  };
+
   return (
-    <div className="relative flex flex-col m-5 bg-white z-30 p-10 h-[93%]">
+    <div className="relative flex flex-col m-5 bg-white z-30 p-10 h-[90%]">
       <p className="absolute top-2 right-2 text-xs italic text-gray-400">
         {category}
       </p>
-      <Image src={image} height={200} width={200} objectFit="contain" />
+      <Image src={image} height={200} width={200} objectFit="contain" alt="" />
       <h4 className="my-3">{title}</h4>
       <div className="flex">
         {Array(rating)
@@ -25,13 +48,14 @@ function Product({ id, title, price, description, category, image }) {
           ))}
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
-      <div className="mb-5">
+      <div className="mb-4">
         <Currency quantity={price} currency="MAD" />
       </div>
       <div className="mt-auto">
         {hasPrime && (
           <div className="flex items-center space-x-2">
             <img
+              loading="lazy"
               className="w-12"
               src="https://links.papareact.com/fdw"
               alt=""
@@ -39,7 +63,9 @@ function Product({ id, title, price, description, category, image }) {
             <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
           </div>
         )}
-        <button className="mt-auto button">Add to basket</button>
+        <button onClick={addItemToBasket} className="mt-auto button">
+          Add to basket
+        </button>
       </div>
     </div>
   );
