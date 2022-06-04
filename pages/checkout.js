@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Currency from "react-currency-formatter";
 import { selectItems, selectTotal } from "../redux/slices/basketSlice";
 
-function checkout() {
+function Checkout() {
   const { data: session } = useSession();
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
@@ -69,4 +69,4 @@ function checkout() {
   );
 }
 
-export default checkout;
+export default Checkout;
