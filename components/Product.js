@@ -1,70 +1,77 @@
 import { useState, useEffect } from "react";
-import { StarIcon } from "@heroicons/react/solid";
-import Image from "next/image";
-import Currency from "react-currency-formatter";
-import { useDispatch } from "react-redux";
-import { addToBasket } from "../redux/slices/basketSlice";
+import dynamic from "next/dynamic";
+const Currency = dynamic(() => import("react-currency-formatter"));
+const StarIcon = dynamic(() =>
+  import("@heroicons/react/solid").then((mod) => mod.StarIcon)
+);
+import { useDispatch, useSelector } from "react-redux";
+import { addToBasket, selectItems } from "../redux/slices/basketSlice";
+import Link from "next/link";
 
-function Product({ id, title, price, description, category, image }) {
+function Product({ product }) {
   const dispatch = useDispatch();
-  const MAX_RATING = 5;
-  const MIN_RATING = 1;
-  const [rating, setRating] = useState(0);
-  const [hasPrime, setHasPrime] = useState(false);
+  const [inBasket, setInBasket] = useState(false);
+  const items = useSelector(selectItems);
 
   useEffect(() => {
-    setRating(
-      Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
-    );
-    setHasPrime(Math.random() < 0.5);
-  }, []);
+    if (items.find((item) => item.productId === product._id)) {
+      setInBasket(true);
+    }
+  }, [items]);
 
   const addItemToBasket = () => {
-    const product = {
-      id,
-      title,
-      price,
-      description,
-      category,
-      image,
-      rating,
-      hasPrime,
+    const productItem = {
+      productId: product._id,
+      name: product.name,
+      image: product.images[0],
+      quantity: 1,
+      color: product.colors === null ? "" : product.colors[0],
+      size: "",
+      reviews: product.reviews,
+      details: product.datails,
+      price: product.price,
     };
-    dispatch(addToBasket(product));
+    localStorage.setItem("items", JSON.stringify([...items, productItem]));
+    dispatch(addToBasket(productItem));
+    setInBasket(true);
   };
 
   return (
-    <div className="relative flex flex-col m-5 bg-white z-30 p-10 h-[90%]">
-      <p className="absolute top-2 right-2 text-xs italic text-gray-400">
-        {category}
-      </p>
-      <Image src={image} height={200} width={200} objectFit="contain" alt="" />
-      <h4 className="my-3">{title}</h4>
-      <div className="flex">
-        {Array(rating)
-          .fill()
-          .map((_, i) => (
-            <StarIcon className="h-5 text-yellow-500" />
-          ))}
-      </div>
-      <p className="text-xs my-2 line-clamp-2">{description}</p>
-      <div className="mb-4">
-        <Currency quantity={price} currency="MAD" />
-      </div>
-      <div className="mt-auto">
-        {hasPrime && (
-          <div className="flex items-center space-x-2">
-            <img
-              loading="lazy"
-              className="w-12"
-              src="https://links.papareact.com/fdw"
-              alt=""
-            />
-            <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
+    <div className="relative flex flex-col m-5 bg-white z-30 h-[90%] rounded-3xl justify-end">
+      <Link href={`/product/${product.slug.current}`}>
+        <a className="flex flex-col">
+          <img
+            className="rounded-t-3xl w-full h-[250px] object-cover"
+            src={product.images[0]}
+            alt={product.name}
+            loading="lazy"
+          />
+          <div className="px-5">
+            <h4 className="my-3">{product.name}</h4>
+            <div className="flex">
+              {Array(product.reviews.average)
+                .fill()
+                .map((_, i) => (
+                  <StarIcon key={i} className="h-5 text-yellow-500" />
+                ))}
+            </div>
+            <p className="text-xs my-2 line-clamp-2">{product.details}</p>
+            <div className="mb-4 font-semibold">
+              <Currency quantity={product.price} currency="MAD" />
+            </div>
           </div>
-        )}
-        <button onClick={addItemToBasket} className="mt-auto button">
-          Add to basket
+        </a>
+      </Link>
+      <div className="mt-auto px-5 pb-5">
+        <button
+          disabled={inBasket}
+          onClick={addItemToBasket}
+          className={`mt-auto button ${
+            inBasket &&
+            "from-gray-300 to-gray-500 border border-gray-300 focus:ring-gray-500 active:from-gray-500"
+          }`}
+        >
+          {inBasket ? "Déjà dans le panier" : "Ajouter au panier"}
         </button>
       </div>
     </div>

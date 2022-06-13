@@ -1,57 +1,29 @@
-import Product from "./Product";
+import dynamic from "next/dynamic";
+const Product = dynamic(() => import("./Product"));
 
 function Feed({ products }) {
   return (
-    <div className="grid grid-flow-row-dense -mt-14 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:-mt-52 mx-auto">
-      {products
-        .slice(0, 4)
-        .map(({ id, title, price, description, category, image }) => (
-          <Product
-            key={id}
-            id={id}
-            title={title}
-            price={price}
-            description={description}
-            category={category}
-            image={image}
-          />
-        ))}
+    <>
+      {products.slice(0, 4).map((product) => (
+        <Product key={product._id} product={product} />
+      ))}
 
       <img
-        className="md:col-span-full"
-        src="https://links.papareact.com/dyz"
-        alt=""
+        className="md:col-span-full mb-6"
+        src="/pub1.jpg"
+        alt="pub"
+        loading="lazy"
       />
 
-      <div className="md:col-span-2">
-        {products
-          .slice(4, 5)
-          .map(({ id, title, price, description, category, image }) => (
-            <Product
-              key={id}
-              id={id}
-              title={title}
-              price={price}
-              description={description}
-              category={category}
-              image={image}
-            />
-          ))}
-      </div>
-      {products
-        .slice(5, products.length)
-        .map(({ id, title, price, description, category, image }) => (
-          <Product
-            key={id}
-            id={id}
-            title={title}
-            price={price}
-            description={description}
-            category={category}
-            image={image}
-          />
+      <div className="md:col-span-1">
+        {products.slice(4, 5).map((product) => (
+          <Product key={product._id} product={product} />
         ))}
-    </div>
+      </div>
+      {products.slice(5, products.length).map((product) => (
+        <Product key={product._id} product={product} />
+      ))}
+    </>
   );
 }
 

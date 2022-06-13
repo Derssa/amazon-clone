@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /orders
+
+User-agent: *
+Disallow: /checkout
+
+User-agent: *
+Allow: /
+
+Sitemap: https://sacki.tk/sitemap.xml

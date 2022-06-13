@@ -1,4 +1,7 @@
-import { Carousel } from "react-responsive-carousel";
+import dynamic from "next/dynamic";
+const Carousel = dynamic(() =>
+  import("react-responsive-carousel").then((mod) => mod.Carousel)
+);
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Banner() {
@@ -18,13 +21,13 @@ function Banner() {
         interval={5000}
       >
         <div>
-          <img loading="lazy" src="https://links.papareact.com/gi1" alt="" />
+          <img loading="lazy" src="/c1.jpg" alt="c1" />
         </div>
         <div>
-          <img loading="lazy" src="https://links.papareact.com/6ff" alt="" />
+          <img loading="lazy" src="/c2.jpg" alt="c2" />
         </div>
         <div>
-          <img loading="lazy" src="https://links.papareact.com/7ma" alt="" />
+          <img loading="lazy" src="/c3.jpg" alt="c3" />
         </div>
       </Carousel>
     </div>

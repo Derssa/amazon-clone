@@ -1,5 +1,6 @@
-import React from "react";
-import Currency from "react-currency-formatter";
+import moment from "moment";
+import dynamic from "next/dynamic";
+const Currency = dynamic(() => import("react-currency-formatter"));
 
 function Order({ order }) {
   return (
@@ -9,8 +10,8 @@ function Order({ order }) {
       text-sm text-gray-600"
       >
         <div>
-          <p className="font-bold text-xs">ORDER PLACED</p>
-          <p>{moment.unix(order.timestamp).format("DD MM YYYY")}</p>
+          <p className="font-bold text-xs">COMMANDE PASSÉE</p>
+          <p>{moment(new Date(order._createdAt)).format("DD/MM/YYYY")}</p>
         </div>
         <div>
           <p className="text-xs font-bold">TOTAL</p>
@@ -22,23 +23,29 @@ function Order({ order }) {
           className="text-sm whitespace-nowrap sm:text-xl self-end
           flax-1 text-right text-blue-500"
         >
-          {order.items.length} items
+          {order.items.length} éléments
         </p>
         <p
           className="absolute top-2 right-2 w-40 lg:w-72 truncate
         text-xs whitespace-nowrap"
         >
-          ORDER # {order.id}
+          COMMANDE # {order._id}
         </p>
       </div>
-      <div className="p-5 sm:p-10">
+      <div className="p-3 sm:p-5">
         <div className="flex space-x-6 overflow-x-auto">
           {order.items.map((item) => (
-            <img
-              className="h-20 object-contain sm:h-32"
-              src={item.image}
-              alt=""
-            />
+            <div key={item._key}>
+              <img
+                className="h-20 object-contain sm:h-32"
+                src={item.image}
+                alt={item.name}
+                loading="lazy"
+              />
+              <p className="text-xs text-center mt-1">
+                {item.quantity + " " + item.name}
+              </p>
+            </div>
           ))}
         </div>
       </div>
