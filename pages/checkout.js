@@ -103,12 +103,12 @@ function Checkout() {
                 <h1 className="text-3xl">Désolé, en rupture de stock !</h1>
               </div>
               <p>
-                Merci d'avoir magasiné avec nous. si vous souhaitez visiter
-                d'autres produits s'il vous plaît le lien ci-dessous.
+                Merci d&apos;avoir magasiné avec nous. si vous souhaitez visiter
+                d&apos;autres produits s&apos;il vous plaît le lien ci-dessous.
               </p>
               <Link href="/">
                 <a className="button mt-8 text-center">
-                  Aller à la page d'accueil
+                  Aller à la page d&apos;accueil
                 </a>
               </Link>
             </div>
