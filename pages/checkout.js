@@ -95,23 +95,42 @@ function Checkout() {
       </Head>
       <Header />
       {isConfirmed ? (
-        <main className="max-w-screen-lg my-10 mx-auto">
-          <div className="flex flex-col p-10 bg-white">
-            <div className="flex items-center space-x-2 mb-5">
-              <XCircleIcon className="text-red-500 h-10" />
-              <h1 className="text-3xl">Désolé, en rupture de stock !</h1>
+        <>
+          <main className="max-w-screen-lg my-10 mx-auto">
+            <div className="flex flex-col p-10 bg-white">
+              <div className="flex items-center space-x-2 mb-5">
+                <XCircleIcon className="text-red-500 h-10" />
+                <h1 className="text-3xl">Désolé, en rupture de stock !</h1>
+              </div>
+              <p>
+                Merci d'avoir magasiné avec nous. si vous souhaitez visiter
+                d'autres produits s'il vous plaît le lien ci-dessous.
+              </p>
+              <Link href="/">
+                <a className="button mt-8 text-center">
+                  Aller à la page d'accueil
+                </a>
+              </Link>
             </div>
-            <p>
-              Merci d'avoir magasiné avec nous. si vous souhaitez visiter
-              d'autres produits s'il vous plaît le lien ci-dessous.
-            </p>
-            <Link href="/">
-              <a className="button mt-8 text-center">
-                Aller à la page d'accueil
-              </a>
-            </Link>
-          </div>
-        </main>
+          </main>
+          {/*<main className="max-w-screen-lg my-10 mx-auto">
+                  <div className="flex flex-col p-10 bg-white">
+                    <div className="flex items-center space-x-2 mb-5">
+                      <CheckCircleIcon className="text-green-500 h-10" />
+                      <h1 className="text-3xl">
+                        Merci, votre commande a été confirmée !
+                      </h1>
+                    </div>
+                    <p>
+                      Merci d'avoir magasiné avec nous. si vous souhaitez vérifier la
+                      état des commandes s'il vous plaît le lien ci-dessous.
+                    </p>
+                    <Link href="/orders">
+                      <a className="button mt-8 text-center">Accéder à mes commandes</a>
+                    </Link>
+                  </div>
+              </main>*/}
+        </>
       ) : (
         <main className="lg:flex lg:flex-row-reverse max-w-screen-2xl mx-auto py-5">
           {items.length > 0 && (
@@ -221,23 +240,3 @@ function Checkout() {
 }
 
 export default Checkout;
-
-{
-  /*<main className="max-w-screen-lg my-10 mx-auto">
-          <div className="flex flex-col p-10 bg-white">
-            <div className="flex items-center space-x-2 mb-5">
-              <CheckCircleIcon className="text-green-500 h-10" />
-              <h1 className="text-3xl">
-                Merci, votre commande a été confirmée !
-              </h1>
-            </div>
-            <p>
-              Merci d'avoir magasiné avec nous. si vous souhaitez vérifier la
-              état des commandes s'il vous plaît le lien ci-dessous.
-            </p>
-            <Link href="/orders">
-              <a className="button mt-8 text-center">Accéder à mes commandes</a>
-            </Link>
-          </div>
-      </main>*/
-}
