@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["links.papareact.com", "cdn.sanity.io", "tailwindui.com"],
+    domains: ["cdn.sanity.io", "tailwindui.com"],
   },
   env: {
     SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,

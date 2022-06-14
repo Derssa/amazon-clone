@@ -20,15 +20,15 @@ function Orders({ orders }) {
           Votre commandes
         </h1>
         {session ? (
-          <h2>{orders.length} Commande(s)</h2>
+          <h2>0 Commande(s)</h2>
         ) : (
           <h2>Connectez-vous pour voir vos commandes</h2>
         )}
-        <div className="mt-5 space-y-4">
+        {/*<div className="mt-5 space-y-4">
           {orders?.map((order) => (
             <Order key={order._id} order={order} />
           ))}
-        </div>
+          </div>*/}
       </main>
     </div>
   );

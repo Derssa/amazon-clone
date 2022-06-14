@@ -106,7 +106,7 @@ function Checkout() {
               Merci d'avoir magasiné avec nous. si vous souhaitez visiter
               d'autres produits s'il vous plaît le lien ci-dessous.
             </p>
-            <Link href="/orders">
+            <Link href="/">
               <a className="button mt-8 text-center">
                 Aller à la page d'accueil
               </a>
@@ -116,13 +116,17 @@ function Checkout() {
       ) : (
         <main className="lg:flex lg:flex-row-reverse max-w-screen-2xl mx-auto py-5">
           {items.length > 0 && (
-            <form className="sticky top-16 sm:top-24 z-40 flex flex-col h-fit bg-white p-5 mx-5 mb-5 md:mx-10 lg:mt-8 shadow-xl">
-              <h2 className="whitespace-nowrap text-center">
+            <form className="sticky top-16 sm:top-24 z-40 flex flex-col h-fit bg-white mx-5 mb-5 md:mx-10 lg:mt-8 shadow-xl">
+              <p className="text-sm mb-2 text-center bg-gray-800 text-white py-1">
+                livraison gratuite
+              </p>
+              <h2 className="whitespace-nowrap text-center px-5">
                 Total ({items.length} éléments):{" "}
                 <span className="font-bold">
                   <Currency quantity={total} currency="MAD" />
                 </span>
               </h2>
+
               <input
                 className="input mt-2"
                 type="email"
@@ -166,7 +170,7 @@ function Checkout() {
                 <button
                   disabled
                   type="button"
-                  className="text-white bg-blue-700 font-medium text-center px-6 py-2 rounded-lg text-sm mt-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
+                  className="text-white bg-blue-700 font-medium text-center px-6 py-2 text-sm mt-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
                 >
                   <svg
                     role="status"
