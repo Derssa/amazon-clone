@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import dynamic from "next/dynamic";
 const Header = dynamic(() => import("../components/Header"));
 const CheckoutProduct = dynamic(() => import("../components/CheckoutProduct"));
-const Currency = dynamic(() => import("react-currency-formatter"));
 import {
   addAllToBasket,
   selectItems,
@@ -122,9 +121,7 @@ function Checkout() {
               </p>
               <h2 className="whitespace-nowrap text-center px-5">
                 Total ({items.length} éléments):{" "}
-                <span className="font-bold">
-                  <Currency quantity={total} currency="MAD" />
-                </span>
+                <span className="font-bold">{total} DH</span>
               </h2>
 
               <input

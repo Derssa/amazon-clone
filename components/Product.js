@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-const Currency = dynamic(() => import("react-currency-formatter"));
 const StarIcon = dynamic(() =>
   import("@heroicons/react/solid").then((mod) => mod.StarIcon)
 );
@@ -56,9 +55,7 @@ function Product({ product }) {
                 ))}
             </div>
             <p className="text-xs my-2 line-clamp-2">{product.details}</p>
-            <div className="mb-4 font-semibold">
-              <Currency quantity={product.price} currency="MAD" />
-            </div>
+            <div className="mb-4 font-semibold">{product.price} DH</div>
           </div>
         </a>
       </Link>

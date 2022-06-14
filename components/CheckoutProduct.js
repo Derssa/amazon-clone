@@ -1,6 +1,5 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
-const Currency = dynamic(() => import("react-currency-formatter"));
 const StarIcon = dynamic(() =>
   import("@heroicons/react/solid").then((mod) => mod.StarIcon)
 );
@@ -47,7 +46,7 @@ function CheckoutProduct({ product }) {
             ))}
         </div>
         <p className="text-xs my-2 line-clamp-3">{product.details}</p>
-        <Currency quantity={product.price * product.quantity} currency="MAD" />
+        {product.price * product.quantity} DH
       </div>
       <div className="flex flex-col space-y-2 my-auto items-center">
         <p className="text-center text-xs sm:text-base">

@@ -1,6 +1,5 @@
 import moment from "moment";
 import dynamic from "next/dynamic";
-const Currency = dynamic(() => import("react-currency-formatter"));
 
 function Order({ order }) {
   return (
@@ -15,9 +14,7 @@ function Order({ order }) {
         </div>
         <div>
           <p className="text-xs font-bold">TOTAL</p>
-          <p>
-            <Currency quantity={order.amount} currency="MAD" />
-          </p>
+          <p>{order.amount} DH</p>
         </div>
         <p
           className="text-sm whitespace-nowrap sm:text-xl self-end
