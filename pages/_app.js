@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', ${process.env.GOOGLE_ANALYTICS});`}</Script>
+  gtag('config', '${process.env.GOOGLE_ANALYTICS}');`}</Script>
       <SessionProvider session={session}>
         <Provider store={store}>
           <Component {...pageProps} />
