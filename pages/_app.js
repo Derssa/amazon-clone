@@ -3,8 +3,30 @@ import { store } from "../redux/store";
 import "../styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import Script from "next/script";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    import("react-facebook-pixel")
+      .then((x) => x.default)
+      .then((RP) => {
+        RP.init(`${process.env.FB_PIXEL}`);
+        RP.pageView();
+
+        router.events.on("routeChangeComplete", () => {
+          RP.pageView();
+        });
+      });
+    return () => {
+      router.events.off("routeChangeComplete", () => {
+        RP.pageView();
+      });
+    };
+  }, [router.events]);
+
   return (
     <SessionProvider session={session}>
       <Provider store={store}>
