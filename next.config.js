@@ -7,6 +7,7 @@ const nextConfig = {
   env: {
     SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
     SANITY_TOKEN: process.env.SANITY_TOKEN,
+    GOOGLE_ANALYTICS: process.env.GOOGLE_ANALYTICS,
   },
   i18n: {
     locales: ["fr"],
