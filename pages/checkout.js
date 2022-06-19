@@ -41,6 +41,22 @@ function Checkout() {
     setErr("");
   };
 
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof url != "undefined") {
+        window.location = url;
+      }
+    };
+    gtag("event", "conversion", {
+      send_to: `${process.env.GOOGLE_CONVERSION}/ruEpCPbM8sYDEOjz_5UD`,
+      value: total,
+      currency: "MAD",
+      transaction_id: "",
+      event_callback: callback,
+    });
+    return false;
+  }
+
   const submitCheckout = async (e) => {
     e.preventDefault();
     if (
@@ -79,6 +95,7 @@ function Checkout() {
       dispatch(addAllToBasket([]));
       localStorage.removeItem("items");
       setLoading(false);
+      gtag_report_conversion();
     } catch (err) {
       setLoading(false);
       setErr(err.response.data.msg);
