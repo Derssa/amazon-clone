@@ -11,13 +11,18 @@ const nextConfig = {
     GOOGLE_CONVERSION: process.env.GOOGLE_CONVERSION,
   },
   i18n: {
-    locales: ["fr"],
-    defaultLocale: "fr",
+    locales: ["ar"],
+    defaultLocale: "ar",
   },
   async redirects() {
     return [
       {
         source: "/product",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/categories",
         destination: "/",
         permanent: true,
       },

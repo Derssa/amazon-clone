@@ -36,7 +36,7 @@ function Product({ product }) {
   };
 
   return (
-    <div className="relative flex flex-col m-5 bg-white z-30 h-[90%] rounded-3xl justify-end">
+    <div className="relative flex flex-col m-5 bg-white z-30 min-h-[450px] rounded-3xl justify-end">
       <Link href={`/product/${product.slug.current}`}>
         <a className="flex flex-col">
           <img
@@ -45,7 +45,7 @@ function Product({ product }) {
             alt={product.name}
             loading="lazy"
           />
-          <div className="px-5">
+          <div dir="rtl" className="px-5">
             <h4 className="my-3">{product.name}</h4>
             <div className="flex">
               {Array(product.reviews.average)
@@ -55,7 +55,7 @@ function Product({ product }) {
                 ))}
             </div>
             <p className="text-xs my-2 line-clamp-2">{product.details}</p>
-            <div className="mb-4 font-semibold">{product.price} DH</div>
+            <div className="mb-4 font-semibold">{product.price} درهم</div>
           </div>
         </a>
       </Link>
@@ -68,7 +68,7 @@ function Product({ product }) {
             "from-gray-300 to-gray-500 border border-gray-300 focus:ring-gray-500 active:from-gray-500"
           }`}
         >
-          {inBasket ? "Déjà dans le panier" : "Ajouter au panier"}
+          {inBasket ? "في السلة الخاصة بك" : "أضف إلى السلة"}
         </button>
       </div>
     </div>

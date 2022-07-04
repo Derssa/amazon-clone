@@ -3,12 +3,12 @@ export default async function checkout(req, res) {
     const client = (await import("../../sanity")).client;
     const { order } = req.body;
     if (!order) {
-      return res.status(400).json({ msg: "Cant't add" });
+      return res.status(400).json({ msg: "لا يمكن إضافة الطلب" });
     }
 
     await client.create(order);
-    res.status(200).json({ msg: "Order added" });
+    res.status(200).json({ msg: "تمت العملية بنجاح" });
   } catch (err) {
-    return res.status(500).json({ msg: "Can't add order" });
+    return res.status(500).json({ msg: "لا يمكن إضافة الطلب" });
   }
 }

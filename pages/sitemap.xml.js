@@ -1,11 +1,11 @@
-const EXTERNAL_DATA_URL = "https://sacki.tk/product";
+const EXTERNAL_DATA_URL = "https://divacosmetica.netlify.app/product";
 
 function generateSiteMap(products) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!--We manually set the two URLs we know already-->
      <url>
-       <loc>https://sacki.tk</loc>
+       <loc>https://divacosmetica.netlify.app</loc>
      </url>
      ${products
        .map((product) => {

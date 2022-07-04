@@ -1,36 +1,46 @@
 import moment from "moment";
-import dynamic from "next/dynamic";
 
 function Order({ order }) {
   return (
     <div className="relative border rounded-md">
       <div
-        className="flex items-center space-x-10 p-5 bg-gray-100
+        className="flex flex-row-reverse items-center space-x-10 space-x-reverse p-5 bg-gray-100
       text-sm text-gray-600"
       >
         <div>
-          <p className="font-bold text-xs">COMMANDE PASSÉE</p>
-          <p>{moment(new Date(order._createdAt)).format("DD/MM/YYYY")}</p>
+          <p dir="rtl" className="font-bold text-xs">
+            الطلبية تمت في{" "}
+          </p>
+          <p dir="rtl">
+            {moment(new Date(order._createdAt)).format("YYYY/MM/DD")}
+          </p>
         </div>
         <div>
-          <p className="text-xs font-bold">TOTAL</p>
-          <p>{order.amount} DH</p>
+          <p dir="rtl" className="text-xs font-bold">
+            المجموع
+          </p>
+          <p dir="rtl">{order.amount} درهم</p>
         </div>
         <p
+          dir="rtl"
           className="text-sm whitespace-nowrap sm:text-xl self-end
-          flax-1 text-right text-blue-500"
+          flex-1 text-right text-blue-500"
         >
-          {order.items.length} éléments
+          {order.items.length} وحدات
         </p>
         <p
-          className="absolute top-2 right-2 w-40 lg:w-72 truncate
+          dir="rtl"
+          className="absolute top-2 left-2 truncate
         text-xs whitespace-nowrap"
         >
-          COMMANDE # {order._id}
+          رقم # {order._id}
         </p>
       </div>
       <div className="p-3 sm:p-5">
-        <div className="flex space-x-6 overflow-x-auto">
+        <div
+          dir="rtl"
+          className="flex space-x-6 space-x-reverse overflow-x-auto"
+        >
           {order.items.map((item) => (
             <div key={item._key}>
               <img

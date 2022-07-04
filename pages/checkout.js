@@ -65,7 +65,7 @@ function Checkout() {
       client.phone.length <= 0 ||
       client.address.length <= 0
     )
-      return setErr("Please fill in all fields.");
+      return setErr(".يرجى تعبئة جميع الحقول");
 
     setLoading(true);
 
@@ -85,6 +85,7 @@ function Checkout() {
         color: item.color.name,
         size: item.size,
       })),
+      status: "pending",
     };
 
     try {
@@ -105,8 +106,8 @@ function Checkout() {
   return (
     <div className="bg-gray-100 min-h-[100vh]">
       <Head>
-        <title>Checkout</title>
-        <meta name="description" content="Checkout" />
+        <title>Diva | سلتي</title>
+        <meta name="description" content="سلتي" />
         <meta name="robots" content="noindex,nofollow" />
         <link rel="icon" href="/icon.png" />
       </Head>
@@ -114,50 +115,33 @@ function Checkout() {
       {isConfirmed ? (
         <>
           <main className="max-w-screen-lg my-10 mx-auto">
-            <div className="flex flex-col p-10 bg-white">
-              <div className="flex items-center space-x-2 mb-5">
-                <XCircleIcon className="text-red-500 h-10" />
-                <h1 className="text-3xl">Désolé, en rupture de stock !</h1>
+            <div dir="rtl" className="flex flex-col p-10 bg-white">
+              <div className="flex items-center space-x-2 space-x-reverse mb-5">
+                <CheckCircleIcon className="text-green-500 h-10" />
+                <h1 className="text-3xl">شكرا لك ، تم تأكيد طلبك!</h1>
               </div>
               <p>
-                Merci d&apos;avoir magasiné avec nous. si vous souhaitez visiter
-                d&apos;autres produits s&apos;il vous plaît le lien ci-dessous.
+                شكرا للتسوق معنا. إذا كنت ترغب في التحقق من حالة طلبك ، يرجى
+                النقر على الرابط أدناه.
               </p>
-              <Link href="/">
-                <a className="button mt-8 text-center">
-                  Aller à la page d&apos;accueil
+              <Link href="/orders">
+                <a className="button mt-8 text-center font-medium">
+                  رؤية طلبياتي
                 </a>
               </Link>
             </div>
           </main>
-          {/*<main className="max-w-screen-lg my-10 mx-auto">
-                  <div className="flex flex-col p-10 bg-white">
-                    <div className="flex items-center space-x-2 mb-5">
-                      <CheckCircleIcon className="text-green-500 h-10" />
-                      <h1 className="text-3xl">
-                        Merci, votre commande a été confirmée !
-                      </h1>
-                    </div>
-                    <p>
-                      Merci d'avoir magasiné avec nous. si vous souhaitez vérifier la
-                      état des commandes s'il vous plaît le lien ci-dessous.
-                    </p>
-                    <Link href="/orders">
-                      <a className="button mt-8 text-center">Accéder à mes commandes</a>
-                    </Link>
-                  </div>
-              </main>*/}
         </>
       ) : (
-        <main className="lg:flex lg:flex-row-reverse max-w-screen-2xl mx-auto py-5">
+        <main className="lg:flex lg:flex-row-reverse max-w-screen-2xl justify-center mx-auto py-5">
           {items.length > 0 && (
             <form className="sticky top-16 sm:top-24 z-40 flex flex-col h-fit bg-white mx-5 mb-5 md:mx-10 lg:mt-8 shadow-xl">
               <p className="text-sm mb-2 text-center bg-gray-800 text-white py-1">
-                livraison gratuite
+                توصيل مجاني
               </p>
-              <h2 className="whitespace-nowrap text-center px-5">
-                Total ({items.length} éléments):{" "}
-                <span className="font-bold">{total} DH</span>
+              <h2 dir="rtl" className="whitespace-nowrap text-center px-5">
+                المجموع ({items.length} عناصر):{" "}
+                <span className="font-bold">{total} درهم</span>
               </h2>
 
               <input
@@ -165,7 +149,7 @@ function Checkout() {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Your email"
+                placeholder="البريد الإلكتروني"
                 onChange={inputChange}
                 defaultValue={client.email}
               />
@@ -174,7 +158,7 @@ function Checkout() {
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Your name"
+                placeholder="الاسم الكامل"
                 onChange={inputChange}
                 defaultValue={client.name}
               />
@@ -183,7 +167,7 @@ function Checkout() {
                 type="tel"
                 name="phone"
                 id="phone"
-                placeholder="Your phone"
+                placeholder="الهاتف"
                 onChange={inputChange}
                 defaultValue={client.phone}
               />
@@ -192,7 +176,7 @@ function Checkout() {
                 type="text"
                 name="address"
                 id="address"
-                placeholder="Your address"
+                placeholder="عنوان التوصيل"
                 onChange={inputChange}
                 defaultValue={client.address}
               />
@@ -201,13 +185,14 @@ function Checkout() {
               </p>
               {loading ? (
                 <button
+                  dir="rtl"
                   disabled
                   type="button"
-                  className="text-white bg-blue-700 font-medium text-center px-6 py-2 text-sm mt-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
+                  className="text-white bg-[#a69341] font-medium text-center px-6 py-2 text-sm mt-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
                 >
                   <svg
                     role="status"
-                    className="inline w-4 h-4 mr-3 text-white animate-spin"
+                    className="inline w-4 h-4 ml-3 text-white animate-spin"
                     viewBox="0 0 100 101"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -221,7 +206,7 @@ function Checkout() {
                       fill="currentColor"
                     />
                   </svg>
-                  Chargement...
+                  المعالجة...
                 </button>
               ) : (
                 <button
@@ -229,7 +214,7 @@ function Checkout() {
                   onClick={submitCheckout}
                   className="button mt-2"
                 >
-                  Acheter
+                  الشراء
                 </button>
               )}
             </form>
@@ -237,13 +222,13 @@ function Checkout() {
           <div className="flex flex-col justify-center mx-5 md:mx-4 my-5">
             <Image
               src="/pub2.jpg"
-              width={1100}
-              height={300}
+              width={700}
+              height={170}
               objectFit="contain"
             />
             <div className="flex flex-col p-5 mt-8 space-y-10 bg-white">
-              <h1 className="text-xl md:text-3xl border-b pb-4">
-                {items.length === 0 ? "Votre panier est vide" : "Votre panier"}
+              <h1 dir="rtl" className="text-xl md:text-3xl border-b pb-4">
+                {items.length === 0 ? "سلتك فارغة" : "سلتك"}
               </h1>
               {items.map((item) => (
                 <CheckoutProduct key={item.productId} product={item} />

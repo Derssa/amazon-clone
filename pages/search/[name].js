@@ -36,14 +36,17 @@ export default function Name({ products }) {
             <ShoppingCartIcon className="text-gray-700 h-10 mr-4" />
             <Link href="/checkout">
               <a className="button text-center mt-1">
-                {items.length} article(s) dans votre panier
+                {items.length} :الوحدات الموجودة فى سلتك
               </a>
             </Link>
           </div>
         )}
 
         {/* feed */}
-        <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto">
+        <div
+          dir="rtl"
+          className="grid grid-flow-row-dense mt-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto"
+        >
           <Feed products={products} />
         </div>
       </main>
@@ -60,7 +63,7 @@ export async function getServerSideProps(context) {
     _id,
     name,
     price,
-    category,
+    categories,
     slug,
     "images":images[].asset->url,
     colors,

@@ -45,15 +45,14 @@ function CheckoutProduct({ product }) {
               <StarIcon key={i} className="h-5 text-yellow-500" />
             ))}
         </div>
-        <p className="text-xs my-2 line-clamp-3">{product.details}</p>
-        {product.price * product.quantity} DH
+        <p>درهم {product.price * product.quantity}</p>
       </div>
       <div className="flex flex-col space-y-2 my-auto items-center">
         <p className="text-center text-xs sm:text-base">
-          Quantity: <span className="font-bold ml-1">{product.quantity}</span>
+          الكمية: <span className="font-bold ml-1">{product.quantity}</span>
         </p>
         <button onClick={removeItemFromBasket} className="button">
-          retirer du panier
+          الإزالة من السلة
         </button>
       </div>
     </div>

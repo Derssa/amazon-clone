@@ -23,9 +23,10 @@ export default {
       },
     },
     {
-      name: "category",
-      title: "Category",
-      type: "string",
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "string" }],
     },
     {
       name: "images",
@@ -64,6 +65,11 @@ export default {
           fields: [
             { name: "name", title: "Name", type: "string" },
             { name: "inStock", title: "InStock", type: "boolean" },
+            {
+              name: "price",
+              title: "Price",
+              type: "number",
+            },
           ],
         },
       ],
@@ -80,6 +86,19 @@ export default {
       fields: [
         { name: "average", title: "Average", type: "number" },
         { name: "totalCount", title: "TotalCount", type: "number" },
+      ],
+    },
+    {
+      name: "content",
+      type: "array",
+      title: "Content",
+      of: [
+        {
+          type: "block",
+        },
+        {
+          type: "image",
+        },
       ],
     },
   ],
