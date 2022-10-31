@@ -8,7 +8,7 @@ export default function SignIn({ providers }) {
   return (
     <div>
       <Head>
-        <title>Diva | تسجيل الدخول</title>
+        <title>Beauty Shop | تسجيل الدخول</title>
         <meta name="description" content="Connectez-vous à SACKI" />
         <link rel="icon" href="/icon.png" />
       </Head>

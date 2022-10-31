@@ -23,14 +23,21 @@ function Order({ order }) {
         </div>
         <p
           dir="rtl"
-          className="text-sm whitespace-nowrap sm:text-xl self-end
-          flex-1 text-right text-blue-500"
+          className="text-sm whitespace-nowrap sm:text-lg self-end
+          text-right text-blue-500"
         >
-          {order.items.length} وحدات
+          المنتج: {order.items.length}
         </p>
         <p
           dir="rtl"
-          className="absolute top-2 left-2 truncate
+          className="absolute top-5 left-2 truncate
+          text-xs whitespace-nowrap"
+        >
+          حالة الطلبية: {order.status === "pending" ? "في الانتظار" : "كاملة"}
+        </p>
+        <p
+          dir="rtl"
+          className="absolute top-1 left-2 truncate
         text-xs whitespace-nowrap"
         >
           رقم # {order._id}
@@ -49,8 +56,10 @@ function Order({ order }) {
                 alt={item.name}
                 loading="lazy"
               />
+              <p className="text-xs text-center mt-1">{item.name}</p>
+              <p className="text-xs text-center mt-1">{item.size}</p>
               <p className="text-xs text-center mt-1">
-                {item.quantity + " " + item.name}
+                الكمية: {item.quantity}
               </p>
             </div>
           ))}

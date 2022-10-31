@@ -5,7 +5,7 @@ function Feed({ products }) {
   return (
     <>
       {products.slice(0, 4).map((product) => (
-        <Product key={product._id} product={product} />
+	<Product key={product._id} product={product} />
       ))}
 
       <img

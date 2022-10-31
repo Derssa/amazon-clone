@@ -155,9 +155,6 @@ function Header() {
             <Link href="/categories/علاج الشعر">
               <p className="link whitespace-nowrap">علاج الشعر</p>
             </Link>
-            <Link href="/categories/عناية الوجه">
-              <p className="link whitespace-nowrap">عناية الوجه</p>
-            </Link>
             <Link href="/categories/شامبو للشعر">
               <p className="link whitespace-nowrap">شامبو للشعر</p>
             </Link>
@@ -173,17 +170,11 @@ function Header() {
             <Link href="/categories/سيروم للشعر">
               <p className="link whitespace-nowrap">سيروم للشعر</p>
             </Link>
-            <Link href="/categories/بوتوكس للشعر">
-              <p className="link whitespace-nowrap">بوتوكس للشعر</p>
-            </Link>
             <Link href="/categories/تسريح شعر">
               <p className="link whitespace-nowrap">تسريح شعر</p>
             </Link>
             <Link href="/categories/تلوين الشعر و تنغيمه">
               <p className="link whitespace-nowrap">تلوين الشعر و تنغيمه</p>
-            </Link>
-            <Link href="/categories/جل الشعر">
-              <p className="link whitespace-nowrap">جل الشعر</p>
             </Link>
             <Link href="/categories/كريمات الشعر">
               <p className="link whitespace-nowrap">كريمات الشعر</p>

@@ -9,7 +9,7 @@ function Orders({ orders }) {
   return (
     <div>
       <Head>
-        <title>Diva | طلبياتي</title>
+        <title>Beauty Shop | طلبياتي</title>
         <meta name="description" content="My orders" />
         <meta name="robots" content="noindex,nofollow" />
         <link rel="icon" href="/icon.png" />
@@ -55,6 +55,7 @@ export async function getServerSideProps(context) {
     _id,
     amount,
     items,
+    status,
     _createdAt
   }`;
 

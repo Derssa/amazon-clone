@@ -78,7 +78,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      products,
+      products: products.sort(() => Math.random() - 0.5),
       session,
     },
   };

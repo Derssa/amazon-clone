@@ -67,11 +67,11 @@ function Slug({ product }) {
       name: product.name,
       image: selectedImage,
       quantity,
-      color: selectedColor,
-      size: selectedSize,
+      color: selectedColor.name,
+      size: selectedSize.name,
       reviews: product.reviews,
       details: product.datails,
-      price: product.price,
+      price: selectedSize.price,
     };
 
     localStorage.setItem("items", JSON.stringify([...items, productItem]));
@@ -106,7 +106,7 @@ function Slug({ product }) {
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://sacki.tk/product/${product.slug.current}",
+        "url": "https://beautyshopstore.netlify.app/product/${product.slug.current}",
         "priceCurrency": "MAD",
         "price": "${product.price}",
         "itemCondition": "https://schema.org/UsedCondition",

@@ -25,9 +25,9 @@ function Product({ product }) {
       image: product.images[0],
       quantity: 1,
       color: product.colors === null ? "" : product.colors[0],
-      size: "",
+      size: product.sizes[0].name,
       reviews: product.reviews,
-      details: product.datails,
+      details: product.details,
       price: product.price,
     };
     localStorage.setItem("items", JSON.stringify([...items, productItem]));

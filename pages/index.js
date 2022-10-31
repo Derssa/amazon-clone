@@ -9,13 +9,13 @@ const Feed = dynamic(() => import("../components/Feed"));
 const Banner = dynamic(() => import("../components/Banner"));
 import { selectItems } from "../redux/slices/basketSlice";
 
-export default function Home({ products }) {
+export default function Home({ products, bannerProduct}) {
   const items = useSelector(selectItems);
 
   return (
     <div className="bg-gray-100">
       <Head>
-        <title>Diva</title>
+        <title>Beauty Shop</title>
         <meta name="description" content="Buy Anything you want" />
         <link rel="icon" href="/icon.png" />
       </Head>
@@ -25,7 +25,7 @@ export default function Home({ products }) {
 
       <main className="max-w-screen-2xl mx-auto">
         {/* banner */}
-        <Banner />
+        <Banner bannerProduct={bannerProduct}/>
 
         {items.length > 0 && (
           <div
@@ -44,7 +44,7 @@ export default function Home({ products }) {
         {/* feed */}
         <div
           dir="rtl"
-          className="grid grid-flow-row-dense -mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:-mt-16 mx-auto"
+          className="grid grid-flow-row-dense -mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:-mt-10 mx-auto"
         >
           <Feed products={products} />
         </div>
@@ -72,9 +72,13 @@ export async function getServerSideProps(context) {
 
   const products = await client.fetch(query);
 
+  let i = Math.floor(Math.random() * products.length);
+  const bannerProduct = products[i];
+
   return {
     props: {
-      products,
+      products: products.sort(() => Math.random() - 0.5),
+      bannerProduct,
       session,
     },
   };

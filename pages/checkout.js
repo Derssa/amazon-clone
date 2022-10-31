@@ -49,7 +49,7 @@ function Checkout() {
     };
     gtag("event", "conversion", {
       send_to: `${process.env.GOOGLE_CONVERSION}/ruEpCPbM8sYDEOjz_5UD`,
-      value: total,
+      value: total + 20,
       currency: "MAD",
       transaction_id: "",
       event_callback: callback,
@@ -67,6 +67,10 @@ function Checkout() {
     )
       return setErr(".يرجى تعبئة جميع الحقول");
 
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(client.email)) {
+      return setErr(".يرجى وضع بريدك الالكتروني الصحيح");
+    }
+
     setLoading(true);
 
     const order = {
@@ -75,14 +79,14 @@ function Checkout() {
       clientEmail: client.email,
       clientPhone: client.phone,
       clientAddress: client.address,
-      amount: total,
+      amount: (Math.round((total + 20) * 100) / 100).toFixed(2),
       items: items.map((item, i) => ({
         _key: i.toString(),
         productId: item.productId,
         name: item.name,
         image: item.image,
         quantity: item.quantity,
-        color: item.color.name,
+        color: item.color,
         size: item.size,
       })),
       status: "pending",
@@ -106,7 +110,7 @@ function Checkout() {
   return (
     <div className="bg-gray-100 min-h-[100vh]">
       <Head>
-        <title>Diva | سلتي</title>
+        <title>Beauty Shop | سلتي</title>
         <meta name="description" content="سلتي" />
         <meta name="robots" content="noindex,nofollow" />
         <link rel="icon" href="/icon.png" />
@@ -137,11 +141,13 @@ function Checkout() {
           {items.length > 0 && (
             <form className="sticky top-16 sm:top-24 z-40 flex flex-col h-fit bg-white mx-5 mb-5 md:mx-10 lg:mt-8 shadow-xl">
               <p className="text-sm mb-2 text-center bg-gray-800 text-white py-1">
-                توصيل مجاني
+                توصيل 20 درهم
               </p>
               <h2 dir="rtl" className="whitespace-nowrap text-center px-5">
                 المجموع ({items.length} عناصر):{" "}
-                <span className="font-bold">{total} درهم</span>
+                <span className="font-bold">
+                  {(Math.round((total + 20) * 100) / 100).toFixed(2)} درهم
+                </span>
               </h2>
 
               <input
@@ -220,13 +226,7 @@ function Checkout() {
             </form>
           )}
           <div className="flex flex-col justify-center mx-5 md:mx-4 my-5">
-            <Image
-              src="/pub2.jpg"
-              width={700}
-              height={170}
-              objectFit="contain"
-            />
-            <div className="flex flex-col p-5 mt-8 space-y-10 bg-white">
+            <div className="flex flex-col p-5 mb-8 space-y-10 bg-white">
               <h1 dir="rtl" className="text-xl md:text-3xl border-b pb-4">
                 {items.length === 0 ? "سلتك فارغة" : "سلتك"}
               </h1>
@@ -234,6 +234,12 @@ function Checkout() {
                 <CheckoutProduct key={item.productId} product={item} />
               ))}
             </div>
+            <Image
+              src="/pub2.jpg"
+              width={700}
+              height={170}
+              objectFit="contain"
+            />
           </div>
         </main>
       )}

@@ -38,6 +38,7 @@ function CheckoutProduct({ product }) {
       />
       <div className="col-span-3 mx-5">
         <p>{product.name}</p>
+        <p className="mb-2">{product.size}</p>
         <div className="flex">
           {Array(product.reviews.average)
             .fill()
