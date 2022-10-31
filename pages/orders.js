@@ -10,7 +10,7 @@ function Orders({ orders }) {
     <div>
       <Head>
         <title>Beauty Shop | طلبياتي</title>
-        <meta name="description" content="My orders" />
+        <meta name="description" content="طلبياتي" />
         <meta name="robots" content="noindex,nofollow" />
         <link rel="icon" href="/icon.png" />
       </Head>

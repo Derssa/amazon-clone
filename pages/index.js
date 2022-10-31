@@ -16,7 +16,7 @@ export default function Home({ products, bannerProduct}) {
     <div className="bg-gray-100">
       <Head>
         <title>Beauty Shop</title>
-        <meta name="description" content="Buy Anything you want" />
+        <meta name="description" content="اكتشفي أفضل مستحضرات التجميل من أفضل العلامات التجارية ,مجموعة لا مثيل لها من الماكياج والعناية بالبشرة والشعر والعطور والمزيد على Beauty Shop" />
         <link rel="icon" href="/icon.png" />
       </Head>
 
