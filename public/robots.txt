@@ -7,4 +7,4 @@ Disallow: /checkout
 User-agent: *
 Allow: /
 
-Sitemap: https://sacki.tk/sitemap.xml
+Sitemap: https://beautyshopbelvedere.com/sitemap.xml

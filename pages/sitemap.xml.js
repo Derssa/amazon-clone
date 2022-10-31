@@ -5,7 +5,7 @@ function generateSiteMap(products) {
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!--We manually set the two URLs we know already-->
      <url>
-       <loc>https://divacosmetica.netlify.app</loc>
+       <loc>https://beautyshopbelvedere.com</loc>
      </url>
      ${products
        .map((product) => {

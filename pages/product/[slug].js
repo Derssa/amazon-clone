@@ -106,7 +106,7 @@ function Slug({ product }) {
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://beautyshopstore.netlify.app/product/${product.slug.current}",
+        "url": "https://beautyshopbelvedere.com/product/${product.slug.current}",
         "priceCurrency": "MAD",
         "price": "${product.price}",
         "itemCondition": "https://schema.org/UsedCondition",
