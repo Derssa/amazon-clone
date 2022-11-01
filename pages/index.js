@@ -17,7 +17,13 @@ export default function Home({ products, bannerProduct}) {
       <Head>
         <title>Beauty Shop</title>
         <meta name="description" content="اكتشفي أفضل مستحضرات التجميل من أفضل العلامات التجارية ,مجموعة لا مثيل لها من الماكياج والعناية بالبشرة والشعر والعطور والمزيد على Beauty Shop" />
-        <link rel="icon" href="/icon.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
       </Head>
 
       {/* header */}
