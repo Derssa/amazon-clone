@@ -79,7 +79,7 @@ function Checkout() {
       clientEmail: client.email,
       clientPhone: client.phone,
       clientAddress: client.address,
-      amount: (Math.round((total + 20) * 100) / 100).toFixed(2),
+      amount: parseFloat((Math.round((total + 20) * 100) / 100).toFixed(2)),
       items: items.map((item, i) => ({
         _key: i.toString(),
         productId: item.productId,

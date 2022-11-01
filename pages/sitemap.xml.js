@@ -1,4 +1,4 @@
-const EXTERNAL_DATA_URL = "https://divacosmetica.netlify.app/product";
+const EXTERNAL_DATA_URL = "https://beautyshopbelvedere.com/product";
 
 function generateSiteMap(products) {
   return `<?xml version="1.0" encoding="UTF-8"?>
