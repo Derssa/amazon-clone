@@ -8,15 +8,29 @@ export default function SignIn({ providers }) {
   return (
     <div>
       <Head>
-        <title>Beauty Shop | تسجيل الدخول</title>
-        <meta name="description" content="Beauty Shop | تسجيل الدخول" />
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000"/>
-        <meta name="msapplication-TileColor" content="#ffffff"/>
-        <meta name="theme-color" content="#ffffff"/>
+        <title>Cheap Games Network | تسجيل الدخول</title>
+        <meta name="description" content="Cheap Games Network | تسجيل الدخول" />
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       <Header />
       <div className="w-full flex flex-col justify-center items-center py-20">

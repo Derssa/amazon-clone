@@ -9,16 +9,30 @@ function Orders({ orders }) {
   return (
     <div>
       <Head>
-        <title>Beauty Shop | طلبياتي</title>
+        <title>Cheap Games Network | طلبياتي</title>
         <meta name="description" content="طلبياتي" />
         <meta name="robots" content="noindex,nofollow" />
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000"/>
-        <meta name="msapplication-TileColor" content="#ffffff"/>
-        <meta name="theme-color" content="#ffffff"/>
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       <Header />
       <main className="max-w-screen-lg mx-auto p-10">

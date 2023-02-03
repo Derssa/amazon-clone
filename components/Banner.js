@@ -18,8 +18,8 @@ function Banner({bannerProduct}) {
             <h2 className="hidden md:line-clamp-2 md:text-lg md:block">{bannerProduct.name}</h2>
             <h3 className="text-xs line-clamp-2 font-extrabold tracking-tight text-gray-900 sm:mt-1 sm:text-2xl lg:text-3xl">{bannerProduct.details}</h3>
             <Link href={`/product/${bannerProduct.slug.current}`}>
-              <a className="drop-shadow-xl bg-[#c1ab4d] text-xs text-center font-bold mt-2 w-14 py-1 sm:mt-4 sm:w-20 sm:text-base">
-                المزيد...
+              <a className="drop-shadow-xl bg-[#44de2c] text-xs text-center font-bold mt-2 w-full py-2 sm:mt-4 sm:w-36 sm:text-base">
+                معرفة الخصائص
               </a>
             </Link>
           </div>

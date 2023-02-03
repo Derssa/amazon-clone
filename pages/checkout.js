@@ -49,7 +49,7 @@ function Checkout() {
     };
     gtag("event", "conversion", {
       send_to: `${process.env.GOOGLE_CONVERSION}/ruEpCPbM8sYDEOjz_5UD`,
-      value: total + 20,
+      value: total,
       currency: "MAD",
       transaction_id: "",
       event_callback: callback,
@@ -79,7 +79,7 @@ function Checkout() {
       clientEmail: client.email,
       clientPhone: client.phone,
       clientAddress: client.address,
-      amount: parseFloat((Math.round((total + 20) * 100) / 100).toFixed(2)),
+      amount: parseFloat((Math.round(total * 100) / 100).toFixed(2)),
       items: items.map((item, i) => ({
         _key: i.toString(),
         productId: item.productId,
@@ -110,16 +110,30 @@ function Checkout() {
   return (
     <div className="bg-gray-100 min-h-[100vh]">
       <Head>
-        <title>Beauty Shop | سلتي</title>
+        <title>Cheap Games Network | سلتي</title>
         <meta name="description" content="سلتي" />
         <meta name="robots" content="noindex,nofollow" />
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000"/>
-        <meta name="msapplication-TileColor" content="#ffffff"/>
-        <meta name="theme-color" content="#ffffff"/>
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       <Header />
       {isConfirmed ? (
@@ -152,7 +166,7 @@ function Checkout() {
               <h2 dir="rtl" className="whitespace-nowrap text-center px-5">
                 المجموع ({items.length} عناصر):{" "}
                 <span className="font-bold">
-                  {(Math.round((total + 20) * 100) / 100).toFixed(2)} درهم
+                  {(Math.round(total * 100) / 100).toFixed(2)} درهم
                 </span>
               </h2>
 

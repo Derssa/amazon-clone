@@ -9,21 +9,38 @@ const Feed = dynamic(() => import("../components/Feed"));
 const Banner = dynamic(() => import("../components/Banner"));
 import { selectItems } from "../redux/slices/basketSlice";
 
-export default function Home({ products, bannerProduct}) {
+export default function Home({ products, bannerProduct }) {
   const items = useSelector(selectItems);
 
   return (
     <div className="bg-gray-100">
       <Head>
-        <title>Beauty Shop</title>
-        <meta name="description" content="اكتشفي أفضل مستحضرات التجميل من أفضل العلامات التجارية ,مجموعة لا مثيل لها من الماكياج والعناية بالبشرة والشعر والعطور والمزيد على Beauty Shop" />
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000"/>
-        <meta name="msapplication-TileColor" content="#ffffff"/>
-        <meta name="theme-color" content="#ffffff"/>
+        <title>Cheap Games Network</title>
+        <meta
+          name="description"
+          content="استمتع بعرض كبير من المنتجات الرقمية مثل الألعاب و حسابات مشحونة و بطاقات الهدايا والبرامج وغير ذلك بأفضل الأسعار في السوق. لا تدفع الكثير ,اشتر بالرخيصة على CheapGamesNetwork.com"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
 
       {/* header */}
@@ -31,9 +48,9 @@ export default function Home({ products, bannerProduct}) {
 
       <main className="max-w-screen-2xl mx-auto">
         {/* banner */}
-        <Banner bannerProduct={bannerProduct}/>
+        <Banner bannerProduct={bannerProduct} />
 
-        {items.length > 0 && (
+        {/*items.length > 0 && (
           <div
             className="sm:hidden flex mb-14 sticky top-20 z-40 h-fit
              bg-white p-5 mx-5 md:mx-10 lg:mt-8 shadow-xl"
@@ -45,7 +62,7 @@ export default function Home({ products, bannerProduct}) {
               </a>
             </Link>
           </div>
-        )}
+        )*/}
 
         {/* feed */}
         <div

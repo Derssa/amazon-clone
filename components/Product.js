@@ -51,7 +51,7 @@ function Product({ product }) {
               {Array(product.reviews.average)
                 .fill()
                 .map((_, i) => (
-                  <StarIcon key={i} className="h-5 text-yellow-500" />
+                  <StarIcon key={i} className="h-5 text-gray-600" />
                 ))}
             </div>
             <p className="text-xs my-2 line-clamp-2">{product.details}</p>
@@ -60,7 +60,7 @@ function Product({ product }) {
         </a>
       </Link>
       <div className="mt-auto px-5 pb-5">
-        <button
+        {/*<button
           disabled={inBasket}
           onClick={addItemToBasket}
           className={`mt-auto button ${
@@ -68,8 +68,17 @@ function Product({ product }) {
             "from-gray-300 to-gray-500 border border-gray-300 focus:ring-gray-500 active:from-gray-500"
           }`}
         >
-          {inBasket ? "في السلة الخاصة بك" : "أضف إلى السلة"}
-        </button>
+          ارسل طلب
+        </button>*/}
+	<Link href={`https://wa.me/212621259039?text=سلام، باغي نشري ${product.name}`}>
+        	<a>
+			<button
+          		className={`mt-auto button`}
+        		>
+          		ارسل طلب لشراء	
+        		</button>
+		</a>
+	</Link>
       </div>
     </div>
   );

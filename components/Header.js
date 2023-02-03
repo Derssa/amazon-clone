@@ -41,8 +41,8 @@ function Header() {
   return (
     <>
       <div
-        className="sticky top-0 z-50 flex items-center bg-white p-3 flex-grow justify-between
-      py-2"
+        className="sticky top-0 z-50 flex items-center bg-white px-[40%] flex-grow justify-between
+      py-2 md:px-10"
       >
         <div className="flex items-center flex-grow md:flex-grow-0">
           <Link href="/">
@@ -51,7 +51,7 @@ function Header() {
                 src="/logo.png"
                 alt="logo"
                 width={100}
-                height={50}
+                height={60}
                 objectFit="contain"
                 className="cursor-pointer"
               />
@@ -60,7 +60,7 @@ function Header() {
         </div>
         <div
           className="hidden md:flex items-center ml-6 h-10 w-[70%]
-        rounded-lg flex-row-reverse bg-[#c1ab4d]"
+        rounded-lg flex-row-reverse bg-[#44de2c]"
         >
           <input
             dir="rtl"
@@ -76,7 +76,7 @@ function Header() {
             onClick={submitSearch}
           />
         </div>
-        <div
+        {/*<div
           className="text-black flex items-center text-xs
         space-x-4 sm:space-x-6 sm:mx-6 mx-2 whitespace-nowrap"
         >
@@ -113,13 +113,13 @@ function Header() {
               </div>
             </a>
           </Link>
-        </div>
+        </div>*/}
       </div>
       <header>
         <div className="p-2 md:hidden bg-gray-100">
           <div
             className="flex flex-row-reverse items-center h-10 
-        rounded-lg flex-grow bg-[#c1ab4d]"
+        rounded-lg flex-grow bg-[#44de2c]"
           >
             <input
               dir="rtl"
@@ -152,32 +152,14 @@ function Header() {
                 الكل
               </p>
             </Link>
-            <Link href="/categories/علاج الشعر">
-              <p className="link whitespace-nowrap">علاج الشعر</p>
+            <Link href="/categories/playstation">
+              <p className="link whitespace-nowrap">PLAYSTATION</p>
             </Link>
-            <Link href="/categories/شامبو للشعر">
-              <p className="link whitespace-nowrap">شامبو للشعر</p>
+            <Link href="/categories/psn">
+              <p className="link whitespace-nowrap">PSN</p>
             </Link>
-            <Link href="/categories/مكيفات و بلسم">
-              <p className="link whitespace-nowrap">مكيفات و بلسم</p>
-            </Link>
-            <Link href="/categories/أقنعة الشعر">
-              <p className="link whitespace-nowrap">أقنعة الشعر</p>
-            </Link>
-            <Link href="/categories/زيوت للشعر">
-              <p className="link whitespace-nowrap">زيوت للشعر</p>
-            </Link>
-            <Link href="/categories/سيروم للشعر">
-              <p className="link whitespace-nowrap">سيروم للشعر</p>
-            </Link>
-            <Link href="/categories/تسريح شعر">
-              <p className="link whitespace-nowrap">تسريح شعر</p>
-            </Link>
-            <Link href="/categories/تلوين الشعر و تنغيمه">
-              <p className="link whitespace-nowrap">تلوين الشعر و تنغيمه</p>
-            </Link>
-            <Link href="/categories/كريمات الشعر">
-              <p className="link whitespace-nowrap">كريمات الشعر</p>
+            <Link href="/categories/ps plus">
+              <p className="link whitespace-nowrap">PS PLUS</p>
             </Link>
           </div>
         </nav>

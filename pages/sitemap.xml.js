@@ -1,11 +1,11 @@
-const EXTERNAL_DATA_URL = "https://beautyshopbelvedere.com/product";
+const EXTERNAL_DATA_URL = "https://cheapgamesnetwork.com/product";
 
 function generateSiteMap(products) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!--We manually set the two URLs we know already-->
      <url>
-       <loc>https://beautyshopbelvedere.com</loc>
+       <loc>https://cheapgamesnetwork.com</loc>
      </url>
      ${products
        .map((product) => {

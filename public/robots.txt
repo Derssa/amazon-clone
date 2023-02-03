@@ -5,6 +5,9 @@ User-agent: *
 Disallow: /checkout
 
 User-agent: *
+Disallow: /auth
+
+User-agent: *
 Allow: /
 
-Sitemap: https://beautyshopbelvedere.com/sitemap.xml
+Sitemap: https://cheapgamesnetwork.com/sitemap.xml

@@ -10,6 +10,6 @@
     @apply my-1 px-3 py-2 bg-gray-100 text-sm rounded-md mx-5;
   }
   .button {
-    @apply p-2 text-xs w-full md:text-sm bg-gradient-to-b from-[#ffec80] to-[#ebd975] border border-yellow-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500;
+    @apply p-2 text-xs w-full md:text-sm bg-[#44de2c] font-bold border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-500 active:from-gray-500;
   }
 }

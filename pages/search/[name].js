@@ -34,7 +34,7 @@ export default function Name({ products }) {
       <Header />
 
       <main className="max-w-screen-2xl mx-auto">
-        {items.length > 0 && (
+        {/*items.length > 0 && (
           <div
             className="sm:hidden flex my-4 sticky top-20 z-40 h-fit
              bg-white p-5 mx-5 md:mx-10 lg:mt-8 shadow-xl"
@@ -46,7 +46,7 @@ export default function Name({ products }) {
               </a>
             </Link>
           </div>
-        )}
+        )*/}
 
         {/* feed */}
         <div

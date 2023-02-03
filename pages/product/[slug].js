@@ -106,7 +106,7 @@ function Slug({ product }) {
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://beautyshopbelvedere.com/product/${product.slug.current}",
+        "url": "https://cheapgamesnetwork.com/product/${product.slug.current}",
         "priceCurrency": "MAD",
         "price": "${product.price}",
         "itemCondition": "https://schema.org/UsedCondition",
@@ -125,13 +125,27 @@ function Slug({ product }) {
         <meta property="og:title" content={product.name} />
         <meta property="og:description" content={product.details} />
         <meta property="og:image" content={product.images[0]} />
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000"/>
-        <meta name="msapplication-TileColor" content="#ffffff"/>
-        <meta name="theme-color" content="#ffffff"/>
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={addProductJsonLd()}
@@ -139,7 +153,7 @@ function Slug({ product }) {
         />
       </Head>
       <Header />
-      {items.length > 0 && (
+      {/*items.length > 0 && (
         <div
           className="sm:hidden flex my-2 sticky top-16 z-40 h-fit
              bg-white p-5 mx-5 md:mx-10 lg:mt-8 shadow-xl"
@@ -151,7 +165,7 @@ function Slug({ product }) {
             </a>
           </Link>
         </div>
-      )}
+      )*/}
       <div className="bg-white">
         <div className="pt-6">
           <nav dir="rtl" aria-label="Breadcrumb">
@@ -184,7 +198,7 @@ function Slug({ product }) {
                 <img
                   src={selectedImage}
                   alt={product.name}
-                  className="w-[700px] h-[385px] bg-gray-500 object-center object-cover"
+                  className="w-[700px] h-[300px] bg-gray-500 object-center object-cover"
                 />
                 {product.images.length > 1 && (
                   <div className="flex justify-between mt-4">
@@ -262,7 +276,7 @@ function Slug({ product }) {
                   </div>
                 </div>
 
-                <form className="mt-4">
+                <div className="mt-4">
                   {/* Quantity */}
                   <div>
                     <h3 className="text-sm text-gray-900 font-medium">
@@ -417,7 +431,7 @@ function Slug({ product }) {
                       </RadioGroup>
                     </div>
                   )}
-                  <button
+                  {/*<button
                     disabled={inBasket}
                     onClick={addItemToBasket}
                     className={`mt-4 w-full ${
@@ -427,8 +441,19 @@ function Slug({ product }) {
                     } border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#111]`}
                   >
                     {inBasket ? "في السلة الخاصة بك" : "أضف إلى السلة"}
-                  </button>
-                </form>
+                  </button>*/}
+                  <Link
+                    href={`https://wa.me/212621259039?text=سلام، باغي نشري ${quantity} ${product.name}`}
+                  >
+                    <a>
+                      <button
+                        className={`mt-4 w-full bg-[#44de2c] hover:bg-[#67fa50] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#111]`}
+                      >
+                        ارسل طلب لشراء
+                      </button>
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
