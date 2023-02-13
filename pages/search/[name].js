@@ -8,6 +8,7 @@ const ShoppingCartIcon = dynamic(() =>
   import("@heroicons/react/solid").then((mod) => mod.ShoppingCartIcon)
 );
 const Header = dynamic(() => import("../../components/Header"));
+const Footer = dynamic(() => import("../../components/Footer"));
 const Feed = dynamic(() => import("../../components/Feed"));
 import { selectItems } from "../../redux/slices/basketSlice";
 
@@ -21,20 +22,34 @@ export default function Name({ products }) {
       <Head>
         <title>{name}</title>
         <meta name="description" content={name} />
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000"/>
-        <meta name="msapplication-TileColor" content="#ffffff"/>
-        <meta name="theme-color" content="#ffffff"/>
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
 
       {/* header */}
       <Header />
 
-      <main className="max-w-screen-2xl mx-auto">
-        {/*items.length > 0 && (
+      <main className="max-w-screen-2xl mx-auto min-h-screen">
+        {items.length > 0 && (
           <div
             className="sm:hidden flex my-4 sticky top-20 z-40 h-fit
              bg-white p-5 mx-5 md:mx-10 lg:mt-8 shadow-xl"
@@ -46,7 +61,7 @@ export default function Name({ products }) {
               </a>
             </Link>
           </div>
-        )*/}
+        )}
 
         {/* feed */}
         <div
@@ -56,6 +71,7 @@ export default function Name({ products }) {
           <Feed products={products} />
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

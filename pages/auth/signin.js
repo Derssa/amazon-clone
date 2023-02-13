@@ -1,6 +1,7 @@
 import { getSession, getProviders, signIn } from "next-auth/react";
 import dynamic from "next/dynamic";
 const Header = dynamic(() => import("../../components/Header"));
+const Footer = dynamic(() => import("../../components/Footer"));
 const GoogleButton = dynamic(() => import("react-google-button"));
 import Head from "next/head";
 
@@ -8,8 +9,8 @@ export default function SignIn({ providers }) {
   return (
     <div>
       <Head>
-        <title>Cheap Games Network | تسجيل الدخول</title>
-        <meta name="description" content="Cheap Games Network | تسجيل الدخول" />
+        <title>Cheap Games Network | Connexion</title>
+        <meta name="description" content="Cheap Games Network | Connexion" />
         <link
           rel="apple-touch-icon"
           sizes="144x144"
@@ -33,14 +34,18 @@ export default function SignIn({ providers }) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <Header />
-      <div className="w-full flex flex-col justify-center items-center py-20">
-        <p className="text-2xl font-medium text-gray-800 mb-4">:تسجيل الدخول</p>
+      <div className="w-full min-h-screen flex flex-col justify-center items-center">
+        <p className="text-2xl font-medium text-gray-800 mb-4">Connexion:</p>
         {Object.values(providers).map((provider) => (
           <div key={provider.name}>
-            <GoogleButton onClick={() => signIn(provider.id)} />
+            <GoogleButton
+              label="Connecter avec Google"
+              onClick={() => signIn(provider.id)}
+            />
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

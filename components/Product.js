@@ -25,7 +25,7 @@ function Product({ product }) {
       image: product.images[0],
       quantity: 1,
       color: product.colors === null ? "" : product.colors[0],
-      size: product.sizes[0].name,
+      size: product.sizes === null ? "" : product.sizes[0].name,
       reviews: product.reviews,
       details: product.details,
       price: product.price,
@@ -45,7 +45,7 @@ function Product({ product }) {
             alt={product.name}
             loading="lazy"
           />
-          <div dir="rtl" className="px-5">
+          <div className="px-5">
             <h4 className="my-3">{product.name}</h4>
             <div className="flex">
               {Array(product.reviews.average)
@@ -55,30 +55,21 @@ function Product({ product }) {
                 ))}
             </div>
             <p className="text-xs my-2 line-clamp-2">{product.details}</p>
-            <div className="mb-4 font-semibold">{product.price} درهم</div>
+            <div className="mb-4 font-semibold">{product.price} €</div>
           </div>
         </a>
       </Link>
       <div className="mt-auto px-5 pb-5">
-        {/*<button
+        <button
           disabled={inBasket}
           onClick={addItemToBasket}
           className={`mt-auto button ${
             inBasket &&
-            "from-gray-300 to-gray-500 border border-gray-300 focus:ring-gray-500 active:from-gray-500"
+            "bg-[#bbb] from-gray-300 to-gray-500 border border-gray-300 focus:ring-gray-500 active:from-gray-500"
           }`}
         >
-          ارسل طلب
-        </button>*/}
-	<Link href={`https://wa.me/212621259039?text=سلام، باغي نشري ${product.name}`}>
-        	<a>
-			<button
-          		className={`mt-auto button`}
-        		>
-          		ارسل طلب لشراء	
-        		</button>
-		</a>
-	</Link>
+          {inBasket ? "Dans votre panier" : "Ajouter au panier"}
+        </button>
       </div>
     </div>
   );

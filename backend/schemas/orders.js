@@ -42,6 +42,8 @@ export default {
             { name: "quantity", title: "Quantity", type: "number" },
             { name: "color", title: "Color", type: "string" },
             { name: "size", title: "Size", type: "string" },
+            { name: "email", title: "Email", type: "string" },
+            { name: "password", title: "Password", type: "string" },
           ],
         },
       ],

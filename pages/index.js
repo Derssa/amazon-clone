@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import dynamic from "next/dynamic";
 const Header = dynamic(() => import("../components/Header"));
+const Footer = dynamic(() => import("../components/Footer"));
 const Feed = dynamic(() => import("../components/Feed"));
 const Banner = dynamic(() => import("../components/Banner"));
 import { selectItems } from "../redux/slices/basketSlice";
@@ -18,7 +19,7 @@ export default function Home({ products, bannerProduct }) {
         <title>Cheap Games Network</title>
         <meta
           name="description"
-          content="استمتع بعرض كبير من المنتجات الرقمية مثل الألعاب و حسابات مشحونة و بطاقات الهدايا والبرامج وغير ذلك بأفضل الأسعار في السوق. لا تدفع الكثير ,اشتر بالرخيصة على CheapGamesNetwork.com"
+          content="Profitez d'une large offre de produits numériques tels que des jeux, des comptes prépayés, des cartes-cadeaux, des logiciels et bien plus encore. Acheté en dessinant sur CheapGamesNetwork.com"
         />
         <link
           rel="apple-touch-icon"
@@ -46,11 +47,11 @@ export default function Home({ products, bannerProduct }) {
       {/* header */}
       <Header />
 
-      <main className="max-w-screen-2xl mx-auto">
+      <main className="max-w-screen-2xl min-h-screen mx-auto">
         {/* banner */}
         <Banner bannerProduct={bannerProduct} />
 
-        {/*items.length > 0 && (
+        {items.length > 0 && (
           <div
             className="sm:hidden flex mb-14 sticky top-20 z-40 h-fit
              bg-white p-5 mx-5 md:mx-10 lg:mt-8 shadow-xl"
@@ -58,20 +59,19 @@ export default function Home({ products, bannerProduct }) {
             <ShoppingCartIcon className="text-gray-700 h-10 mr-4" />
             <Link href="/checkout">
               <a className="button text-center mt-1">
-                {items.length} :الوحدات الموجودة فى سلتك
+                Votre panier: {items.length}
               </a>
             </Link>
           </div>
-        )*/}
+        )}
 
         {/* feed */}
-        <div
-          dir="rtl"
-          className="grid grid-flow-row-dense -mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:-mt-10 mx-auto"
-        >
+        <div className="grid grid-flow-row-dense -mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:-mt-10 mx-auto">
           <Feed products={products} />
         </div>
       </main>
+      {/* footer */}
+      <Footer />
     </div>
   );
 }

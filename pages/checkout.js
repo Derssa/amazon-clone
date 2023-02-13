@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import dynamic from "next/dynamic";
 const Header = dynamic(() => import("../components/Header"));
+const Footer = dynamic(() => import("../components/Footer"));
 const CheckoutProduct = dynamic(() => import("../components/CheckoutProduct"));
 import {
   addAllToBasket,
@@ -19,6 +20,8 @@ const XCircleIcon = dynamic(() =>
 import Link from "next/link";
 import axios from "axios";
 import Head from "next/head";
+import { PayPalButton } from "react-paypal-button-v2";
+import { useEffect } from "react";
 
 function Checkout() {
   const dispatch = useDispatch();
@@ -33,6 +36,7 @@ function Checkout() {
   });
   const [loading, setLoading] = useState(false);
   const [isConfirmed, setIsConfirmed] = useState(false);
+  const [paypalVisible, setPaypalVisible] = useState(false);
   const [err, setErr] = useState("");
 
   const inputChange = (e) => {
@@ -50,35 +54,46 @@ function Checkout() {
     gtag("event", "conversion", {
       send_to: `${process.env.GOOGLE_CONVERSION}/ruEpCPbM8sYDEOjz_5UD`,
       value: total,
-      currency: "MAD",
+      currency: "EUR",
       transaction_id: "",
       event_callback: callback,
     });
     return false;
   }
 
-  const submitCheckout = async (e) => {
-    e.preventDefault();
-    if (
-      client.name.length <= 0 ||
-      client.email.length <= 0 ||
-      client.phone.length <= 0 ||
-      client.address.length <= 0
-    )
-      return setErr(".يرجى تعبئة جميع الحقول");
-
-    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(client.email)) {
-      return setErr(".يرجى وضع بريدك الالكتروني الصحيح");
+  const addPaypalScript = () => {
+    if (window.paypal) {
+      return;
     }
+    const script = document.createElement("script");
+    script.src =
+      "https://www.paypal.com/sdk/js?client-id=AfGWqYQJxFjVCHICSDxO1xmWaO953DnILX-7vKOVNVhKoHpqvv8vzPtoLnuyIWF4ZnHEruaCCq93aETJ&currency=EUR";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+  };
 
+  useEffect(() => {
+    addPaypalScript();
+  }, []);
+
+  const showPaypal = (e) => {
+    e.preventDefault();
+    if (client.phone.length <= 0)
+      return setErr("merci de mettre votre numéro whatsapp.");
+
+    setPaypalVisible(true);
+  };
+
+  const submitCheckout = async (email, name, address) => {
     setLoading(true);
 
     const order = {
       _type: "orders",
-      clientName: client.name,
-      clientEmail: client.email,
+      clientName: name.given_name + " " + name.surname,
+      clientEmail: email,
       clientPhone: client.phone,
-      clientAddress: client.address,
+      clientAddress: address,
       amount: parseFloat((Math.round(total * 100) / 100).toFixed(2)),
       items: items.map((item, i) => ({
         _key: i.toString(),
@@ -88,6 +103,8 @@ function Checkout() {
         quantity: item.quantity,
         color: item.color,
         size: item.size,
+        email: "",
+        password: "",
       })),
       status: "pending",
     };
@@ -110,8 +127,8 @@ function Checkout() {
   return (
     <div className="bg-gray-100 min-h-[100vh]">
       <Head>
-        <title>Cheap Games Network | سلتي</title>
-        <meta name="description" content="سلتي" />
+        <title>Cheap Games Network | Mon panier</title>
+        <meta name="description" content="Mon panier" />
         <meta name="robots" content="noindex,nofollow" />
         <link
           rel="apple-touch-icon"
@@ -138,87 +155,63 @@ function Checkout() {
       <Header />
       {isConfirmed ? (
         <>
-          <main className="max-w-screen-lg my-10 mx-auto">
-            <div dir="rtl" className="flex flex-col p-10 bg-white">
+          <main className="max-w-screen-lg min-h-screen my-10 mx-auto">
+            <div className="flex flex-col p-10 bg-white">
               <div className="flex items-center space-x-2 space-x-reverse mb-5">
                 <CheckCircleIcon className="text-green-500 h-10" />
-                <h1 className="text-3xl">شكرا لك ، تم تأكيد طلبك!</h1>
+                <h1 className="text-3xl">
+                  Merci, votre commande a été envoyée!
+                </h1>
               </div>
               <p>
-                شكرا للتسوق معنا. إذا كنت ترغب في التحقق من حالة طلبك ، يرجى
-                النقر على الرابط أدناه.
+                Nous vous enverrons vos identifiants sur whatsapp et sur la page
+                mes commandes très prochainement. Si vous souhaitez vérifier
+                l'état de votre commande, veuillez Cliquez sur le lien
+                ci-dessous.
               </p>
               <Link href="/orders">
                 <a className="button mt-8 text-center font-medium">
-                  رؤية طلبياتي
+                  Voir mes commandes
                 </a>
               </Link>
             </div>
           </main>
         </>
       ) : (
-        <main className="lg:flex lg:flex-row-reverse max-w-screen-2xl justify-center mx-auto py-5">
+        <main className="lg:flex lg:flex-row-reverse max-w-screen-2xl min-h-screen justify-center mx-auto py-5">
           {items.length > 0 && (
-            <form className="sticky top-16 sm:top-24 z-40 flex flex-col h-fit bg-white mx-5 mb-5 md:mx-10 lg:mt-8 shadow-xl">
+            <form className="sticky top-20 sm:top-24 lg:w-[500px] z-40 flex flex-col h-fit bg-white mx-5 mb-5 md:mx-10 lg:mt-8 shadow-xl">
               <p className="text-sm mb-2 text-center bg-gray-800 text-white py-1">
-                توصيل 20 درهم
+                Livraison entre 30 minutes et 24 heures
               </p>
-              <h2 dir="rtl" className="whitespace-nowrap text-center px-5">
-                المجموع ({items.length} عناصر):{" "}
+              <h2 className="whitespace-nowrap text-center px-5">
+                Total: ({items.length} articles){" "}
                 <span className="font-bold">
-                  {(Math.round(total * 100) / 100).toFixed(2)} درهم
+                  {(Math.round(total * 100) / 100).toFixed(2)} €
                 </span>
               </h2>
 
               <input
-                className="input mt-2"
-                type="email"
-                name="email"
-                id="email"
-                placeholder="البريد الإلكتروني"
-                onChange={inputChange}
-                defaultValue={client.email}
-              />
-              <input
-                className="input"
-                type="text"
-                name="name"
-                id="name"
-                placeholder="الاسم الكامل"
-                onChange={inputChange}
-                defaultValue={client.name}
-              />
-              <input
-                className="input"
+                className="input outline-none"
                 type="tel"
                 name="phone"
                 id="phone"
-                placeholder="الهاتف"
+                placeholder="Votre whatsapp"
                 onChange={inputChange}
                 defaultValue={client.phone}
-              />
-              <input
-                className="input"
-                type="text"
-                name="address"
-                id="address"
-                placeholder="عنوان التوصيل"
-                onChange={inputChange}
-                defaultValue={client.address}
               />
               <p className="text-xs text-center text-red-700 my-2 font-bold">
                 {err}
               </p>
               {loading ? (
                 <button
-                  dir="rtl"
                   disabled
                   type="button"
-                  className="text-white bg-[#a69341] font-medium text-center px-6 py-2 text-sm mt-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
+                  className="text-white bg-[#44de2c] font-medium text-center px-6 py-2 text-sm mt-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
                 >
                   <svg
                     role="status"
-                    className="inline w-4 h-4 ml-3 text-white animate-spin"
+                    className="inline w-4 h-4 mr-3 text-white animate-spin"
                     viewBox="0 0 100 101"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -232,37 +225,95 @@ function Checkout() {
                       fill="currentColor"
                     />
                   </svg>
-                  المعالجة...
+                  Chargement...
                 </button>
               ) : (
-                <button
-                  type="submit"
-                  onClick={submitCheckout}
-                  className="button mt-2"
-                >
-                  الشراء
-                </button>
+                <>
+                  {!paypalVisible ? (
+                    <button
+                      type="submit"
+                      onClick={showPaypal}
+                      className="button mt-2"
+                    >
+                      Acheter
+                    </button>
+                  ) : (
+                    <div className="text-center p-5">
+                      <PayPalButton
+                        createOrder={(data, actions) => {
+                          return actions.order.create({
+                            purchase_units: [
+                              {
+                                amount: {
+                                  currency_code: "EUR",
+                                  value: `${parseFloat(
+                                    (Math.round(total * 100) / 100).toFixed(2)
+                                  )}`,
+                                  breakdown: {
+                                    item_total: {
+                                      currency_code: "EUR",
+                                      value: `${parseFloat(
+                                        (Math.round(total * 100) / 100).toFixed(
+                                          2
+                                        )
+                                      )}`,
+                                    },
+                                  },
+                                },
+                                items: items.map((item, i) => ({
+                                  name: item.name,
+                                  quantity: `${item.quantity}`,
+                                  unit_amount: {
+                                    currency_code: "EUR",
+                                    value: `${item.price}`,
+                                  },
+                                })),
+                              },
+                            ],
+                            application_context: {
+                              shipping_preference: "NO_SHIPPING", // default is "GET_FROM_FILE"
+                            },
+                          });
+                        }}
+                        onApprove={(data, actions) => {
+                          // Capture the funds from the transaction
+                          return actions.order
+                            .capture()
+                            .then(function (details) {
+                              // Show a success message to your buyer
+                              submitCheckout(
+                                details.payer.email_address,
+                                details.payer.name,
+                                details.payer.address.country_code
+                              );
+                            });
+                        }}
+                      />
+                    </div>
+                  )}
+                </>
               )}
             </form>
           )}
-          <div className="flex flex-col justify-center mx-5 md:mx-4 my-5">
-            <div className="flex flex-col p-5 mb-8 space-y-10 bg-white">
-              <h1 dir="rtl" className="text-xl md:text-3xl border-b pb-4">
-                {items.length === 0 ? "سلتك فارغة" : "سلتك"}
-              </h1>
-              {items.map((item) => (
-                <CheckoutProduct key={item.productId} product={item} />
-              ))}
-            </div>
+          <div className="flex flex-col  mx-5 md:mx-4 my-5">
             <Image
               src="/pub2.jpg"
               width={700}
               height={170}
               objectFit="contain"
             />
+            <div className="flex flex-col p-5 mt-8 space-y-10 bg-white">
+              <h1 className="text-xl md:text-3xl border-b pb-4">
+                {items.length === 0 ? "Votre panier est vide" : "Votre panier"}
+              </h1>
+              {items.map((item) => (
+                <CheckoutProduct key={item.productId} product={item} />
+              ))}
+            </div>
           </div>
         </main>
       )}
+      <Footer />
     </div>
   );
 }

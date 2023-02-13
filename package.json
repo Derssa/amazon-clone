@@ -21,10 +21,12 @@
     "moment": "^2.29.3",
     "next": "12.1.6",
     "next-auth": "^4.3.4",
+    "nodemailer": "^6.9.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-facebook-pixel": "^1.0.4",
     "react-google-button": "^0.7.2",
+    "react-paypal-button-v2": "^2.6.3",
     "react-redux": "^8.0.2",
     "react-responsive-carousel": "^3.2.23",
     "tailwind-scrollbar-hide": "^1.1.7"

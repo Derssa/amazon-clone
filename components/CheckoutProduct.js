@@ -31,7 +31,7 @@ function CheckoutProduct({ product }) {
     <div className="grid grid-cols-5">
       <Image
         src={product.image}
-        height={200}
+        height={100}
         width={200}
         objectFit="contain"
         alt={product.name}
@@ -46,14 +46,14 @@ function CheckoutProduct({ product }) {
               <StarIcon key={i} className="h-5 text-yellow-500" />
             ))}
         </div>
-        <p>درهم {product.price * product.quantity}</p>
+        <p>{product.price * product.quantity} €</p>
       </div>
       <div className="flex flex-col space-y-2 my-auto items-center">
-        <p className="text-center text-xs sm:text-base">
-          الكمية: <span className="font-bold ml-1">{product.quantity}</span>
-        </p>
+        {/*<p className="text-center text-xs sm:text-base">
+          Quantité: <span className="font-bold ml-1">{product.quantity}</span>
+            </p>*/}
         <button onClick={removeItemFromBasket} className="button">
-          الإزالة من السلة
+          Retirer du panier
         </button>
       </div>
     </div>

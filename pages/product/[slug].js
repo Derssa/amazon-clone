@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 const Header = dynamic(() => import("../../components/Header"));
+const Footer = dynamic(() => import("../../components/Footer"));
 const PortableText = dynamic(() =>
   import("@portabletext/react").then((mod) => mod.PortableText)
 );
@@ -66,7 +67,7 @@ function Slug({ product }) {
       productId: product._id,
       name: product.name,
       image: selectedImage,
-      quantity,
+      quantity: 1,
       color: selectedColor.name,
       size: selectedSize.name,
       reviews: product.reviews,
@@ -107,7 +108,7 @@ function Slug({ product }) {
       "offers": {
         "@type": "Offer",
         "url": "https://cheapgamesnetwork.com/product/${product.slug.current}",
-        "priceCurrency": "MAD",
+        "priceCurrency": "EUR",
         "price": "${product.price}",
         "itemCondition": "https://schema.org/UsedCondition",
         "availability": "https://schema.org/InStock"
@@ -153,7 +154,7 @@ function Slug({ product }) {
         />
       </Head>
       <Header />
-      {/*items.length > 0 && (
+      {items.length > 0 && (
         <div
           className="sm:hidden flex my-2 sticky top-16 z-40 h-fit
              bg-white p-5 mx-5 md:mx-10 lg:mt-8 shadow-xl"
@@ -161,21 +162,21 @@ function Slug({ product }) {
           <ShoppingCartIcon className="text-gray-700 h-10 mr-4" />
           <Link href="/checkout">
             <a className="button text-center mt-1">
-              {items.length} :الوحدات الموجودة فى سلتك
+              Votre panier: {items.length}
             </a>
           </Link>
         </div>
-      )*/}
-      <div className="bg-white">
+      )}
+      <div className="bg-white min-h-screen">
         <div className="pt-6">
-          <nav dir="rtl" aria-label="Breadcrumb">
+          <nav aria-label="Breadcrumb">
             <ol
               role="list"
               className="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8"
             >
               <li>
                 <div className="flex items-center">
-                  <span className="ml-2 text-sm font-medium text-gray-900">
+                  <span className="mr-2 text-sm font-medium text-gray-900">
                     {product.categories[0]}
                   </span>
                 </div>
@@ -191,7 +192,7 @@ function Slug({ product }) {
             </ol>
           </nav>
 
-          <div className="flex flex-col md:flex-row justify-between my-4">
+          <div className="flex flex-col md:flex-row items-center justify-between my-4">
             {/* Image gallery */}
             <div className="mx-8 my-2 md:w-1/2">
               <div className="flex flex-col lg:block">
@@ -227,10 +228,10 @@ function Slug({ product }) {
             </div>
 
             {/* Product info */}
-            <div dir="rtl" className="mx-8 my-2 md:w-1/2">
+            <div className="mx-8 my-2 md:w-1/2">
               {/* Options */}
               <div className="mt-4 lg:mt-0 lg:row-span-3">
-                <h2 className="sr-only">Product information</h2>
+                <h2 className="sr-only">Information produit</h2>
                 <h1 className="text-2xl mb-2 font-extrabold tracking-tight text-gray-900 sm:text-3xl">
                   {product.name}
                 </h1>
@@ -238,12 +239,12 @@ function Slug({ product }) {
                   {product.sizes !== null
                     ? selectedSize.price * quantity
                     : product.price * quantity}{" "}
-                  درهم
+                  €
                 </p>
 
                 {/* Reviews */}
                 <div className="mt-2">
-                  <h3 className="sr-only">المراجعات</h3>
+                  <h3 className="sr-only">Commentaires</h3>
                   <div className="flex items-center">
                     <div className="flex items-center">
                       {[0, 1, 2, 3, 4].map((rating) => (
@@ -262,14 +263,14 @@ function Slug({ product }) {
                     <p className="sr-only">
                       {product.reviews.average} out of 5 stars
                     </p>
-                    <span className="mr-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                      {product.reviews.totalCount} مراجعات
+                    <span className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                      {product.reviews.totalCount} stars
                     </span>
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <h2 className="text-sm font-medium text-gray-900">تفاصيل</h2>
+                  <h2 className="text-sm font-medium text-gray-900">Détails</h2>
 
                   <div className="mt-2 space-y-6">
                     <p className="text-sm text-gray-600">{product.details}</p>
@@ -278,23 +279,11 @@ function Slug({ product }) {
 
                 <div className="mt-4">
                   {/* Quantity */}
-                  <div>
+                  {/*<div>
                     <h3 className="text-sm text-gray-900 font-medium">
-                      الكمية
+                      Quantité
                     </h3>
                     <div className="flex items-center my-4">
-                      <button
-                        type="button"
-                        className="bg-gray-700 border border-transparent rounded-r-xl w-9 h-9 flex items-center justify-center text-base font-medium text-white"
-                        onClick={() => {
-                          setQuantity(quantity + 1);
-                        }}
-                      >
-                        +
-                      </button>
-                      <p className="border-gray-700 border border-transparent w-10 h-9 flex items-center justify-center text-base font-medium">
-                        {quantity}
-                      </p>
                       <button
                         type="button"
                         className="bg-gray-700 border border-transparent rounded-l-xl w-9 h-9 flex items-center justify-center text-base font-medium text-white"
@@ -306,13 +295,25 @@ function Slug({ product }) {
                       >
                         -
                       </button>
+                      <p className="border-gray-700 border border-transparent w-10 h-9 flex items-center justify-center text-base font-medium">
+                        {quantity}
+                      </p>
+                      <button
+                        type="button"
+                        className="bg-gray-700 border border-transparent rounded-r-xl w-9 h-9 flex items-center justify-center text-base font-medium text-white"
+                        onClick={() => {
+                          setQuantity(quantity + 1);
+                        }}
+                      >
+                        +
+                      </button>
                     </div>
-                  </div>
+                      </div>*/}
                   {/* Colors */}
                   {product.colors !== null && (
                     <div>
                       <h3 className="text-sm text-gray-900 font-medium">
-                        اللون
+                        Couleur
                       </h3>
                       <RadioGroup
                         value={selectedColor}
@@ -358,7 +359,7 @@ function Slug({ product }) {
                     <div className="mt-4">
                       <div className="flex items-center justify-between">
                         <h3 className="text-sm text-gray-900 font-medium">
-                          الحجم
+                          Taille
                         </h3>
                       </div>
 
@@ -368,7 +369,7 @@ function Slug({ product }) {
                         className="mt-4"
                       >
                         <RadioGroup.Label className="sr-only">
-                          Choose a size
+                          Choisissez une taille
                         </RadioGroup.Label>
                         <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
                           {product.sizes.map((size) => (
@@ -431,38 +432,28 @@ function Slug({ product }) {
                       </RadioGroup>
                     </div>
                   )}
-                  {/*<button
+                  <button
                     disabled={inBasket}
                     onClick={addItemToBasket}
-                    className={`mt-4 w-full ${
+                    className={`mt-6 w-full ${
                       inBasket
                         ? "bg-gray-400"
-                        : "bg-[#a18e3f] hover:bg-[#7a6c30]"
+                        : "bg-[#44de2c] hover:bg-[#67fa50]"
                     } border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#111]`}
                   >
-                    {inBasket ? "في السلة الخاصة بك" : "أضف إلى السلة"}
-                  </button>*/}
-                  <Link
-                    href={`https://wa.me/212621259039?text=سلام، باغي نشري ${quantity} ${product.name}`}
-                  >
-                    <a>
-                      <button
-                        className={`mt-4 w-full bg-[#44de2c] hover:bg-[#67fa50] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#111]`}
-                      >
-                        ارسل طلب لشراء
-                      </button>
-                    </a>
-                  </Link>
+                    {inBasket ? "Dans votre panier" : "Ajouter au panier"}
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div className="p-8 text-justify">
+          <h1 className="text-xl font-bold mb-4">Description:</h1>
+          <PortableText value={product.content} components={components} />
+        </div>
       </div>
-      <div dir="rtl" className="p-8 text-justify">
-        <h1 className="text-xl font-bold mb-4">الوصف:</h1>
-        <PortableText value={product.content} components={components} />
-      </div>
+      <Footer />
     </div>
   );
 }

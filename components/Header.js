@@ -41,8 +41,8 @@ function Header() {
   return (
     <>
       <div
-        className="sticky top-0 z-50 flex items-center bg-white px-[40%] flex-grow justify-between
-      py-2 md:px-10"
+        className="sticky top-0 z-50 flex items-center bg-white px-4 flex-grow justify-between
+      py-1 md:px-10"
       >
         <div className="flex items-center flex-grow md:flex-grow-0">
           <Link href="/">
@@ -60,15 +60,14 @@ function Header() {
         </div>
         <div
           className="hidden md:flex items-center ml-6 h-10 w-[70%]
-        rounded-lg flex-row-reverse bg-[#44de2c]"
+        rounded-lg flex-row bg-[#44de2c]"
         >
           <input
-            dir="rtl"
             className="p-2 bg-gray-100 h-full  flex-grow flex-shrink
-            rounded-r-md focus:outline-none px-4"
+            rounded-l-md focus:outline-none px-4"
             type="text"
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="بحث"
+            placeholder="recherche"
             value={search}
           />
           <SearchIcon
@@ -76,26 +75,25 @@ function Header() {
             onClick={submitSearch}
           />
         </div>
-        {/*<div
+        <div
           className="text-black flex items-center text-xs
         space-x-4 sm:space-x-6 sm:mx-6 mx-2 whitespace-nowrap"
         >
-          <div onClick={!session ? signIn : signOut} className="link">
-            <p dir="rtl" className="text-sm">
-              {session ? `الخروج` : "تسجيل"}
-            </p>
-            <p dir="rtl" className="font-extrabold text-sm">
-              {session ? `مرحبا ،${session.user.name}` : "الحساب"}
+          <div
+            onClick={!session ? signIn : signOut}
+            className="link hidden md:block"
+          >
+            <p className="text-sm">{session ? `Déconnecter` : "Connexion"}</p>
+            <p className="font-extrabold text-sm">
+              {session ? `Bonjour، ${session.user.name}` : "mon compte"}
             </p>
           </div>
           {session && (
             <Link href="/orders">
               <a>
                 <div className="link">
-                  <p dir="rtl">كل</p>
-                  <p dir="rtl" className="font-extrabold text-sm">
-                    طلبياتك
-                  </p>
+                  <p>Mes</p>
+                  <p className="font-extrabold text-sm">commandes</p>
                 </div>
               </a>
             </Link>
@@ -104,7 +102,7 @@ function Header() {
             <a>
               <div className="relative cursor-pointer flex items-center">
                 <span
-                  className="absolute top-0 right-0 h-4 w-4 bg-[#c1ab4d]
+                  className="absolute top-0 right-0 h-4 w-4 bg-[#44de2c]
             text-center rounded-full text-black font-bold"
                 >
                   {items.length}
@@ -113,21 +111,30 @@ function Header() {
               </div>
             </a>
           </Link>
-        </div>*/}
+        </div>
       </div>
       <header>
+        <div
+          onClick={!session ? signIn : signOut}
+          className={`link p-2 md:hidden flex-grow ${
+            session ? "bg-[#383838] text-white" : "bg-[#44de2c]"
+          }`}
+        >
+          <p className="font-semibold text-center text-base">
+            {session ? `Déconnecter, ${session.user.name}` : "Connexion"}
+          </p>
+        </div>
         <div className="p-2 md:hidden bg-gray-100">
           <div
-            className="flex flex-row-reverse items-center h-10 
+            className="flex flex-row items-center h-10 
         rounded-lg flex-grow bg-[#44de2c]"
           >
             <input
-              dir="rtl"
               className="p-2 h-full w-6 flex-grow flex-shrink
-            rounded-r-md focus:outline-none px-4"
+            rounded-l-md focus:outline-none px-4"
               type="text"
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="بحث"
+              placeholder="recherche"
               value={search}
             />
             <SearchIcon
@@ -138,18 +145,17 @@ function Header() {
         </div>
         <nav className="relative">
           <div
-            className="absolute top-0 left-0 bg-gradient-to-r
+            className="absolute top-0 right-0 bg-gradient-to-l
        from-gray-300 h-full w-[45px]"
           />
           <div
-            dir="rtl"
-            className="flex items-center space-x-5 p-2 pr-6 bg-gray-300 text-black text-xs
-      font-medium sm:text-sm overflow-x-scroll scrollbar-hide pl-8"
+            className="flex items-center space-x-5 p-2 pl-6 bg-gray-300 text-black text-xs
+      font-medium sm:text-sm overflow-x-scroll scrollbar-hide pr-8"
           >
             <Link href="/">
-              <p className="link flex items-center ml-6">
-                <MenuIcon className="h-6 ml-2" />
-                الكل
+              <p className="link flex items-center mr-6">
+                <MenuIcon className="h-6 mr-2" />
+                TOUT
               </p>
             </Link>
             <Link href="/categories/playstation">
@@ -164,6 +170,16 @@ function Header() {
           </div>
         </nav>
       </header>
+      <Link href={`https://wa.me/212621259039`}>
+        <a className="fixed bottom-4 -right-4 z-50" target="_blank">
+          <Image
+            src="/support.png"
+            width={200}
+            height={55}
+            objectFit="contain"
+          />
+        </a>
+      </Link>
     </>
   );
 }
