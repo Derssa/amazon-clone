@@ -177,6 +177,7 @@ function Header() {
             width={200}
             height={55}
             objectFit="contain"
+            alt="support"
           />
         </a>
       </Link>

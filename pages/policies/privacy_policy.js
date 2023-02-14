@@ -41,15 +41,16 @@ const privacy_policy = () => {
         <p>Dernière mise à jour : 10 février 2023</p>
         <p>
           Cette politique de confidentialité décrit nos politiques et procédures
-          sur la collecte, l'utilisation et la divulgation de vos informations
-          lorsque vous utilisez le service et vous informe sur vos droits en
-          matière de confidentialité et sur la manière dont la loi vous protège.
+          sur la collecte, l&apos;utilisation et la divulgation de vos
+          informations lorsque vous utilisez le service et vous informe sur vos
+          droits en matière de confidentialité et sur la manière dont la loi
+          vous protège.
         </p>
         <p>
           Nous utilisons vos données personnelles pour fournir et améliorer le
           service. En utilisant le Service, Vous acceptez la collecte et
-          l'utilisation d'informations conformément à la présente Politique de
-          confidentialité.
+          l&apos;utilisation d&apos;informations conformément à la présente
+          Politique de confidentialité.
         </p>
         <br />
         <h1 className="font-bold text-lg">Interprétation et définitions</h1>
@@ -59,7 +60,7 @@ const privacy_policy = () => {
         <p>
           Les mots dont la lettre initiale est en majuscule ont des
           significations définies dans les conditions suivantes. Les définitions
-          suivantes auront la même signification, qu'elles apparaissent au
+          suivantes auront la même signification, qu&apos;elles apparaissent au
           singulier ou au pluriel.
         </p>
         <h2 className="font-semibold">Définitions</h2>
@@ -68,7 +69,7 @@ const privacy_policy = () => {
           <li>
             <p>
               <strong>Compte</strong> désigne un compte unique créé pour vous
-              permettre d'accéder à notre Service ou à des parties de notre
+              permettre d&apos;accéder à notre Service ou à des parties de notre
               Service.
             </p>
           </li>
@@ -76,9 +77,10 @@ const privacy_policy = () => {
             <p>
               <strong>Affilié</strong> désigne une entité qui contrôle, est
               contrôlée par ou est sous contrôle commun avec une partie, où
-              "contrôle" signifie la propriété de 50 % ou plus des actions,
-              participations ou autres titres ayant droit voter pour l'élection
-              des administrateurs ou d'une autre autorité de gestion.
+              &quot;contrôle&quot; signifie la propriété de 50 % ou plus des
+              actions, participations ou autres titres ayant droit voter pour
+              l&apos;élection des administrateurs ou d&apos;une autre autorité
+              de gestion.
             </p>
           </li>
           <li>
@@ -105,7 +107,7 @@ const privacy_policy = () => {
           <li>
             <p>
               <strong>Appareil</strong> désigne tout appareil pouvant accéder au
-              Service tel qu'un ordinateur, un téléphone portable ou une
+              Service tel qu&apos;un ordinateur, un téléphone portable ou une
               tablette numérique.
             </p>
           </li>
@@ -140,10 +142,11 @@ const privacy_policy = () => {
           </li>
           <li>
             <p>
-              <strong>Données d'utilisation</strong> fait référence aux données
-              collectées automatiquement, soit générées par l'utilisation du
-              Service, soit à partir de l'infrastructure du Service elle-même
-              (par exemple, la durée d'une visite de page).
+              <strong>Données d&apos;utilisation</strong> fait référence aux
+              données collectées automatiquement, soit générées par
+              l&apos;utilisation du Service, soit à partir de
+              l&apos;infrastructure du Service elle-même (par exemple, la durée
+              d&apos;une visite de page).
             </p>
           </li>
           <li>
@@ -152,10 +155,10 @@ const privacy_policy = () => {
               accessible depuis{" "}
               <a
                 href="http://www.CheapGamesNetwork.com"
-                rel="external nofollow noopener"
+                rel="external nofollow noopener noreferrer"
                 target="_blank"
               >
-                http://www .CheapGamesNetwork.com
+                http://www.CheapGamesNetwork.com
               </a>
             </p>
           </li>
@@ -181,7 +184,7 @@ const privacy_policy = () => {
           Nous fournir certaines informations personnellement identifiables qui
           peuvent être utilisées pour Vous contacter ou Vous identifier. Les
           informations personnellement identifiables peuvent inclure, mais sans
-          s'y limiter :
+          s&apos;y limiter :
         </p>
         <ul className="list-disc">
           <li>
@@ -194,30 +197,32 @@ const privacy_policy = () => {
             <p>Numéro de téléphone</p>
           </li>
           <li>
-            <p>Données d'utilisation</p>
+            <p>Données d&apos;utilisation</p>
           </li>
         </ul>
-        <h3>Données d'utilisation</h3>
+        <h3>Données d&apos;utilisation</h3>
         <p>
-          Les données d'utilisation sont collectées automatiquement lors de
-          l'utilisation du service.
+          Les données d&apos;utilisation sont collectées automatiquement lors de
+          l&apos;utilisation du service.
         </p>
         <p>
-          Les données d'utilisation peuvent inclure des informations telles que
-          l'adresse de protocole Internet de votre appareil (par exemple,
-          l'adresse IP), le type de navigateur, la version du navigateur, les
-          pages de notre service que vous visitez, l'heure et la date de votre
-          visite, le temps passé sur ces pages , des identifiants d'appareil
-          uniques et d'autres données de diagnostic.
+          Les données d&apos;utilisation peuvent inclure des informations telles
+          que l&apos;adresse de protocole Internet de votre appareil (par
+          exemple, l&apos;adresse IP), le type de navigateur, la version du
+          navigateur, les pages de notre service que vous visitez, l&apos;heure
+          et la date de votre visite, le temps passé sur ces pages , des
+          identifiants d&apos;appareil uniques et d&apos;autres données de
+          diagnostic.
         </p>
         <p>
           Lorsque vous accédez au Service par ou via un appareil mobile, nous
           pouvons collecter certaines informations automatiquement, y compris,
-          mais sans s'y limiter, le type d'appareil mobile que vous utilisez,
-          l'identifiant unique de votre appareil mobile, l'adresse IP de votre
-          appareil mobile , votre système d'exploitation mobile, le type de
-          navigateur Internet mobile que vous utilisez, les identifiants uniques
-          de l'appareil et d'autres données de diagnostic.
+          mais sans s&apos;y limiter, le type d&apos;appareil mobile que vous
+          utilisez, l&apos;identifiant unique de votre appareil mobile,
+          l&apos;adresse IP de votre appareil mobile , votre système
+          d&apos;exploitation mobile, le type de navigateur Internet mobile que
+          vous utilisez, les identifiants uniques de l&apos;appareil et
+          d&apos;autres données de diagnostic.
         </p>
         <p>
           Nous pouvons également collecter des informations que votre navigateur
@@ -237,25 +242,25 @@ const privacy_policy = () => {
           <li>Linked In</li>
         </ul>
         <p>
-          Si vous décidez de vous inscrire via ou de nous accorder l'accès à un
-          service de médias sociaux tiers, nous pouvons collecter des données
-          personnelles déjà associées au compte de votre service de médias
-          sociaux tiers, telles que votre nom, votre adresse e-mail , Vos
+          Si vous décidez de vous inscrire via ou de nous accorder l&apos;accès
+          à un service de médias sociaux tiers, nous pouvons collecter des
+          données personnelles déjà associées au compte de votre service de
+          médias sociaux tiers, telles que votre nom, votre adresse e-mail , Vos
           activités ou Votre liste de contacts associée à ce compte.
         </p>
         <p>
           Vous pouvez également avoir la possibilité de partager des
           informations supplémentaires avec la Société via le compte de votre
           service de médias sociaux tiers. Si vous choisissez de fournir ces
-          informations et données personnelles, lors de l'inscription ou
+          informations et données personnelles, lors de l&apos;inscription ou
           autrement, vous autorisez la société à les utiliser, les partager et
-          les stocker d'une manière conforme à la présente politique de
+          les stocker d&apos;une manière conforme à la présente politique de
           confidentialité.
         </p>
         <h3>Technologies de suivi et cookies</h3>
         <p>
           Nous utilisons des cookies et des technologies de suivi similaires
-          pour suivre l'activité sur notre service et stocker certaines
+          pour suivre l&apos;activité sur notre service et stocker certaines
           informations. Les technologies de suivi utilisées sont des balises,
           des balises et des scripts pour collecter et suivre les informations
           et pour améliorer et analyser notre service. Les technologies que nous
@@ -265,11 +270,12 @@ const privacy_policy = () => {
           <li>
             <strong>Cookies ou cookies de navigateur.</strong> Un cookie est un
             petit fichier placé sur votre appareil. Vous pouvez demander à Votre
-            navigateur de refuser tous les Cookies ou de vous signaler l'envoi
-            d'un Cookie. Cependant, si vous n'acceptez pas les cookies, vous ne
-            pourrez peut-être pas utiliser certaines parties de notre service. À
-            moins que vous n'ayez réglé les paramètres de votre navigateur pour
-            qu'il refuse les cookies, notre service peut utiliser des cookies.
+            navigateur de refuser tous les Cookies ou de vous signaler
+            l&apos;envoi d&apos;un Cookie. Cependant, si vous n&apos;acceptez
+            pas les cookies, vous ne pourrez peut-être pas utiliser certaines
+            parties de notre service. À moins que vous n&apos;ayez réglé les
+            paramètres de votre navigateur pour qu&apos;il refuse les cookies,
+            notre service peut utiliser des cookies.
           </li>
           <li>
             <strong>Balises Web.</strong> Certaines sections de notre Service et
@@ -277,10 +283,10 @@ const privacy_policy = () => {
             connus sous le nom de balises Web (également appelés gifs
             transparents, pixels invisibles et gifs à pixel unique) qui
             permettent le Société, par exemple, pour compter les utilisateurs
-            qui ont visité ces pages ou ouvert un e-mail et pour d'autres
+            qui ont visité ces pages ou ouvert un e-mail et pour d&apos;autres
             statistiques de site Web connexes (par exemple, enregistrer la
-            popularité d'une certaine section et vérifier l'intégrité du système
-            et du serveur).
+            popularité d&apos;une certaine section et vérifier l&apos;intégrité
+            du système et du serveur).
           </li>
         </ul>
         <p>
@@ -288,15 +294,7 @@ const privacy_policy = () => {
           &quot;Session&quot; Biscuits. Les cookies persistants restent sur
           votre ordinateur personnel ou votre appareil mobile lorsque vous vous
           déconnectez, tandis que les cookies de session sont supprimés dès que
-          vous fermez votre navigateur Web. Pour en savoir plus sur les cookies,
-          consultez l'article du{" "}
-          <a
-            href="https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking"
-            target="_blank"
-          >
-            site Web sur la politique de confidentialité gratuite
-          </a>
-          .{" "}
+          vous fermez votre navigateur Web.
         </p>
         <p>
           Nous utilisons à la fois des cookies de session et des cookies
@@ -312,24 +310,26 @@ const privacy_policy = () => {
             <p>
               Objectif : Ces cookies sont essentiels pour vous fournir les
               services disponibles via le site Web et pour vous permettre
-              d'utiliser certaines de ses fonctionnalités. Ils aident à
-              authentifier les utilisateurs et à empêcher l'utilisation
-              frauduleuse des comptes d'utilisateurs. Sans ces cookies, les
+              d&apos;utiliser certaines de ses fonctionnalités. Ils aident à
+              authentifier les utilisateurs et à empêcher l&apos;utilisation
+              frauduleuse des comptes d&apos;utilisateurs. Sans ces cookies, les
               services que vous avez demandés ne peuvent pas être fournis, et
-              nous n'utilisons ces cookies que pour vous fournir ces services.
+              nous n&apos;utilisons ces cookies que pour vous fournir ces
+              services.
             </p>
           </li>
           <li>
             <p>
               <strong>
-                Politique relative aux cookies / Avis d'acceptation des cookies
+                Politique relative aux cookies / Avis d&apos;acceptation des
+                cookies
               </strong>
             </p>
             <p>Type : Cookies persistants</p>
             <p>Géré par : Nous</p>
             <p>
               Objectif : Ces cookies identifient si les utilisateurs ont accepté
-              l'utilisation de cookies sur le site Web.
+              l&apos;utilisation de cookies sur le site Web.
             </p>
           </li>
           <li>
@@ -343,14 +343,14 @@ const privacy_policy = () => {
               vous faites lorsque vous utilisez le site Web, tels que la
               mémorisation de vos informations de connexion ou de votre
               préférence de langue. Le but de ces Cookies est de Vous offrir une
-              expérience plus personnelle et de Vous éviter d'avoir à ressaisir
-              vos préférences à chaque fois que Vous utilisez le Site.
+              expérience plus personnelle et de Vous éviter d&apos;avoir à
+              ressaisir vos préférences à chaque fois que Vous utilisez le Site.
             </p>
           </li>
         </ul>
         <p>
-          Pour plus d'informations sur les cookies que nous utilisons et vos
-          choix concernant les cookies, veuillez consulter notre Politique
+          Pour plus d&apos;informations sur les cookies que nous utilisons et
+          vos choix concernant les cookies, veuillez consulter notre Politique
           relative aux cookies ou la section Cookies de notre Politique de
           confidentialité.
         </p>
@@ -364,24 +364,24 @@ const privacy_policy = () => {
           <li>
             <p>
               <strong>Pour fournir et maintenir notre Service</strong>, y
-              compris pour surveiller l'utilisation de notre Service.
+              compris pour surveiller l&apos;utilisation de notre Service.
             </p>
           </li>
           <li>
             <p>
               <strong>Pour gérer Votre Compte :</strong> pour gérer Votre
-              inscription en tant qu'utilisateur du Service. Les données
+              inscription en tant qu&apos;utilisateur du Service. Les données
               personnelles que vous fournissez peuvent vous donner accès à
               différentes fonctionnalités du service qui sont à votre
-              disposition en tant qu'utilisateur enregistré.
+              disposition en tant qu&apos;utilisateur enregistré.
             </p>
           </li>
           <li>
             <p>
-              <strong>Pour l'exécution d'un contrat :</strong> l'élaboration, le
-              respect et l'exécution du contrat d'achat des produits, articles
-              ou services que vous avez achetés ou de tout autre contrat avec
-              nous via le service.
+              <strong>Pour l&apos;exécution d&apos;un contrat :</strong>{" "}
+              l&apos;élaboration, le respect et l&apos;exécution du contrat
+              d&apos;achat des produits, articles ou services que vous avez
+              achetés ou de tout autre contrat avec nous via le service.
             </p>
           </li>
           <li>
@@ -389,17 +389,17 @@ const privacy_policy = () => {
               <strong>Pour vous contacter :</strong> pour vous contacter par
               e-mail, appels téléphoniques, SMS ou autres formes de
               communication électronique équivalentes, telles que les
-              notifications push d'une application mobile concernant les mises à
-              jour ou les communications informatives liées aux fonctionnalités,
-              produits ou services sous-traités, y compris les mises à jour de
-              sécurité, lorsque cela est nécessaire ou raisonnable pour leur
-              mise en œuvre.
+              notifications push d&apos;une application mobile concernant les
+              mises à jour ou les communications informatives liées aux
+              fonctionnalités, produits ou services sous-traités, y compris les
+              mises à jour de sécurité, lorsque cela est nécessaire ou
+              raisonnable pour leur mise en œuvre.
             </p>
           </li>
           <li>
             <p>
               <strong>Pour vous fournir</strong> des actualités, des offres
-              spéciales et des informations générales sur d'autres biens,
+              spéciales et des informations générales sur d&apos;autres biens,
               services et événements que nous proposons et qui sont similaires à
               ceux que vous avez déjà achetés ou sur lesquels vous vous êtes
               renseigné, sauf si vous avez choisi de ne pas le faire recevoir
@@ -414,24 +414,25 @@ const privacy_policy = () => {
           </li>
           <li>
             <p>
-              <strong>Pour les transferts d'entreprise :</strong> Nous pouvons
-              utiliser Vos informations pour évaluer ou mener une fusion, une
-              cession, une restructuration, une réorganisation, une dissolution
-              ou toute autre vente ou transfert de tout ou partie de Nos actifs,
-              que ce soit en tant que en cours d'exploitation ou dans le cadre
-              d'une faillite, d'une liquidation ou d'une procédure similaire,
-              dans laquelle les données personnelles que nous détenons sur les
-              utilisateurs de nos services font partie des actifs transférés.
+              <strong>Pour les transferts d&apos;entreprise :</strong> Nous
+              pouvons utiliser Vos informations pour évaluer ou mener une
+              fusion, une cession, une restructuration, une réorganisation, une
+              dissolution ou toute autre vente ou transfert de tout ou partie de
+              Nos actifs, que ce soit en tant que en cours d&apos;exploitation
+              ou dans le cadre d&apos;une faillite, d&apos;une liquidation ou
+              d&apos;une procédure similaire, dans laquelle les données
+              personnelles que nous détenons sur les utilisateurs de nos
+              services font partie des actifs transférés.
             </p>
           </li>
           <li>
             <p>
-              <strong>À d'autres fins</strong> : nous pouvons utiliser vos
-              informations à d'autres fins, telles que l'analyse de données,
-              l'identification des tendances d'utilisation, la détermination de
-              l'efficacité de nos campagnes promotionnelles et pour évaluer et
-              améliorer notre service, nos produits, nos services , le marketing
-              et votre expérience.
+              <strong>À d&apos;autres fins</strong> : nous pouvons utiliser vos
+              informations à d&apos;autres fins, telles que l&apos;analyse de
+              données, l&apos;identification des tendances d&apos;utilisation,
+              la détermination de l&apos;efficacité de nos campagnes
+              promotionnelles et pour évaluer et améliorer notre service, nos
+              produits, nos services , le marketing et votre expérience.
             </p>
           </li>
         </ul>
@@ -443,23 +444,24 @@ const privacy_policy = () => {
           <li>
             <strong>Avec les fournisseurs de services :</strong> nous pouvons
             partager vos informations personnelles avec les fournisseurs de
-            services pour surveiller et analyser l'utilisation de notre service,
-            pour vous contacter.
+            services pour surveiller et analyser l&apos;utilisation de notre
+            service, pour vous contacter.
           </li>
           <li>
-            <strong>Pour les transferts d'entreprise :</strong> Nous pouvons
-            partager ou transférer Vos informations personnelles dans le cadre
-            de, ou pendant les négociations de, toute fusion, vente d'actifs de
-            la Société, financement ou acquisition de tout ou partie de Notre
-            entreprise à une autre société.
+            <strong>Pour les transferts d&apos;entreprise :</strong> Nous
+            pouvons partager ou transférer Vos informations personnelles dans le
+            cadre de, ou pendant les négociations de, toute fusion, vente
+            d&apos;actifs de la Société, financement ou acquisition de tout ou
+            partie de Notre entreprise à une autre société.
           </li>
           <li>
             <strong>Avec les affiliés :</strong> nous pouvons partager vos
             informations avec nos affiliés, auquel cas nous exigerons de ces
-            affiliés qu'ils respectent la présente politique de confidentialité.
-            Les sociétés affiliées incluent notre société mère et toutes autres
-            filiales, partenaires de coentreprise ou autres sociétés que nous
-            contrôlons ou qui sont sous contrôle commun avec nous.
+            affiliés qu&apos;ils respectent la présente politique de
+            confidentialité. Les sociétés affiliées incluent notre société mère
+            et toutes autres filiales, partenaires de coentreprise ou autres
+            sociétés que nous contrôlons ou qui sont sous contrôle commun avec
+            nous.
           </li>
           <li>
             <strong>Avec des partenaires commerciaux :</strong> nous pouvons
@@ -467,17 +469,17 @@ const privacy_policy = () => {
             proposer certains produits, services ou promotions.
           </li>
           <li>
-            <strong>Avec d'autres utilisateurs :</strong> lorsque vous partagez
-            des informations personnelles ou interagissez autrement dans les
-            zones publiques avec d'autres utilisateurs, ces informations peuvent
-            être vues par tous les utilisateurs et peuvent être diffusées
-            publiquement à l'extérieur. Si vous interagissez avec d'autres
-            utilisateurs ou que vous vous inscrivez via un service de médias
-            sociaux tiers, vos contacts sur le service de médias sociaux tiers
-            peuvent voir votre nom, votre profil, vos photos et la description
-            de votre activité. De même, les autres utilisateurs pourront voir
-            les descriptions de votre activité, communiquer avec vous et
-            consulter votre profil.
+            <strong>Avec d&apos;autres utilisateurs :</strong> lorsque vous
+            partagez des informations personnelles ou interagissez autrement
+            dans les zones publiques avec d&apos;autres utilisateurs, ces
+            informations peuvent être vues par tous les utilisateurs et peuvent
+            être diffusées publiquement à l&apos;extérieur. Si vous interagissez
+            avec d&apos;autres utilisateurs ou que vous vous inscrivez via un
+            service de médias sociaux tiers, vos contacts sur le service de
+            médias sociaux tiers peuvent voir votre nom, votre profil, vos
+            photos et la description de votre activité. De même, les autres
+            utilisateurs pourront voir les descriptions de votre activité,
+            communiquer avec vous et consulter votre profil.
           </li>
           <li>
             <strong>Avec Votre consentement</strong> : Nous pouvons divulguer
@@ -498,18 +500,19 @@ const privacy_policy = () => {
           litiges et appliquer nos accords et politiques juridiques.
         </p>
         <p>
-          La Société conservera également les Données d'utilisation à des fins
-          d'analyse interne. Les données d'utilisation sont généralement
-          conservées pendant une période plus courte, sauf lorsque ces données
-          sont utilisées pour renforcer la sécurité ou pour améliorer la
-          fonctionnalité de notre service, ou lorsque nous sommes légalement
-          tenus de conserver ces données pendant des périodes plus longues.
+          La Société conservera également les Données d&apos;utilisation à des
+          fins d&apos;analyse interne. Les données d&apos;utilisation sont
+          généralement conservées pendant une période plus courte, sauf lorsque
+          ces données sont utilisées pour renforcer la sécurité ou pour
+          améliorer la fonctionnalité de notre service, ou lorsque nous sommes
+          légalement tenus de conserver ces données pendant des périodes plus
+          longues.
         </p>
         <h2 className="font-semibold">Transfert de vos données personnelles</h2>
         <p>
           Vos informations, y compris les données personnelles, sont traitées
-          dans les bureaux d'exploitation de la société et dans tout autre lieu
-          où se trouvent les parties impliquées dans le traitement. Cela
+          dans les bureaux d&apos;exploitation de la société et dans tout autre
+          lieu où se trouvent les parties impliquées dans le traitement. Cela
           signifie que ces informations peuvent être transférées et conservées
           sur des ordinateurs situés en dehors de votre état, province, pays ou
           autre juridiction gouvernementale où les lois sur la protection des
@@ -521,9 +524,9 @@ const privacy_policy = () => {
         </p>
         <p>
           La Société prendra toutes les mesures raisonnablement nécessaires pour
-          s'assurer que Vos données sont traitées en toute sécurité et
+          s&apos;assurer que Vos données sont traitées en toute sécurité et
           conformément à la présente Politique de confidentialité et aucun
-          transfert de Vos Données personnelles n'aura lieu vers une
+          transfert de Vos Données personnelles n&apos;aura lieu vers une
           organisation ou un pays à moins que des contrôles adéquats ne soient
           en place, y compris la sécurité de vos données et autres informations
           personnelles.
@@ -543,8 +546,8 @@ const privacy_policy = () => {
           tout moment en vous connectant à votre compte, si vous en avez un, et
           en visitant la section des paramètres du compte qui vous permet de
           gérer vos informations personnelles. Vous pouvez également nous
-          contacter pour demander l'accès, la correction ou la suppression de
-          toute information personnelle que vous nous avez fournie.
+          contacter pour demander l&apos;accès, la correction ou la suppression
+          de toute information personnelle que vous nous avez fournie.
         </p>
         <p>
           Veuillez noter, cependant, que nous pouvons avoir besoin de conserver
@@ -557,28 +560,29 @@ const privacy_policy = () => {
         <h3>Transactions commerciales</h3>
         <p>
           Si la Société est impliquée dans une fusion, une acquisition ou une
-          vente d'actifs, vos données personnelles peuvent être transférées.
-          Nous vous informerons avant que vos données personnelles ne soient
-          transférées et soumises à une politique de confidentialité différente.
+          vente d&apos;actifs, vos données personnelles peuvent être
+          transférées. Nous vous informerons avant que vos données personnelles
+          ne soient transférées et soumises à une politique de confidentialité
+          différente.
         </p>
         <h3>Application de la loi</h3>
         <p>
           Dans certaines circonstances, la Société peut être tenue de divulguer
-          vos données personnelles si la loi l'exige ou en réponse à des
-          demandes valables d'autorités publiques (par exemple, un tribunal ou
-          une agence gouvernementale).
+          vos données personnelles si la loi l&apos;exige ou en réponse à des
+          demandes valables d&apos;autorités publiques (par exemple, un tribunal
+          ou une agence gouvernementale).
         </p>
         <h3>Autres exigences légales</h3>
         <p>
           La Société peut divulguer Vos Données Personnelles en croyant de bonne
-          foi qu'une telle action est nécessaire pour :
+          foi qu&apos;une telle action est nécessaire pour :
         </p>
         <ul className="list-disc">
           <li>Se conformer à une obligation légale</li>
           <li>Protéger et défendre les droits ou la propriété de la Société</li>
           <li>
-            Prévenir ou enquêter sur d'éventuels actes répréhensibles en rapport
-            avec le Service
+            Prévenir ou enquêter sur d&apos;éventuels actes répréhensibles en
+            rapport avec le Service
           </li>
           <li>
             Protéger la sécurité personnelle des Utilisateurs du Service ou du
@@ -589,48 +593,50 @@ const privacy_policy = () => {
         <h2 className="font-semibold">Sécurité de vos données personnelles</h2>
         <p>
           La sécurité de vos données personnelles est importante pour nous, mais
-          n'oubliez pas qu'aucune méthode de transmission sur Internet ou
-          méthode de stockage électronique n'est sécurisée à 100 %. Bien que
-          nous nous efforcions d'utiliser des moyens commercialement acceptables
-          pour protéger vos données personnelles, nous ne pouvons garantir leur
-          sécurité absolue.
+          n&apos;oubliez pas qu&apos;aucune méthode de transmission sur Internet
+          ou méthode de stockage électronique n&apos;est sécurisée à 100 %. Bien
+          que nous nous efforcions d&apos;utiliser des moyens commercialement
+          acceptables pour protéger vos données personnelles, nous ne pouvons
+          garantir leur sécurité absolue.
         </p>
         <br />
         <h1 className="font-bold text-lg">Confidentialité des enfants</h1>
         <br />
 
         <p>
-          Notre service ne s'adresse pas aux personnes de moins de 13 ans. Nous
-          ne collectons pas sciemment d'informations personnellement
+          Notre service ne s&apos;adresse pas aux personnes de moins de 13 ans.
+          Nous ne collectons pas sciemment d&apos;informations personnellement
           identifiables auprès de personnes de moins de 13 ans. Si vous êtes un
           parent ou un tuteur et que vous savez que votre enfant nous a fourni
           des informations personnelles. Données, veuillez nous contacter. Si
           nous apprenons que nous avons collecté des données personnelles auprès
-          d'une personne de moins de 13 ans sans vérification du consentement
-          parental, nous prenons des mesures pour supprimer ces informations de
-          nos serveurs.
+          d&apos;une personne de moins de 13 ans sans vérification du
+          consentement parental, nous prenons des mesures pour supprimer ces
+          informations de nos serveurs.
         </p>
         <p>
           Si nous devons compter sur le consentement comme base légale pour le
           traitement de vos informations et que votre pays exige le consentement
-          d'un parent, nous pouvons exiger le consentement de votre parent avant
-          de collecter et d'utiliser ces informations.
+          d&apos;un parent, nous pouvons exiger le consentement de votre parent
+          avant de collecter et d&apos;utiliser ces informations.
         </p>
         <br />
-        <h1 className="font-bold text-lg">Liens vers d'autres sites Web</h1>
+        <h1 className="font-bold text-lg">
+          Liens vers d&apos;autres sites Web
+        </h1>
         <br />
 
         <p>
-          Notre Service peut contenir des liens vers d'autres sites Web qui ne
-          sont pas exploités par Nous. Si vous cliquez sur un lien tiers, vous
-          serez dirigé vers le site de ce tiers. Nous vous conseillons vivement
-          de consulter la politique de confidentialité de chaque site que vous
-          visitez.
+          Notre Service peut contenir des liens vers d&apos;autres sites Web qui
+          ne sont pas exploités par Nous. Si vous cliquez sur un lien tiers,
+          vous serez dirigé vers le site de ce tiers. Nous vous conseillons
+          vivement de consulter la politique de confidentialité de chaque site
+          que vous visitez.
         </p>
         <p>
-          Nous n'avons aucun contrôle et n'assumons aucune responsabilité quant
-          au contenu, aux politiques de confidentialité ou aux pratiques des
-          sites ou services tiers.
+          Nous n&apos;avons aucun contrôle et n&apos;assumons aucune
+          responsabilité quant au contenu, aux politiques de confidentialité ou
+          aux pratiques des sites ou services tiers.
         </p>
         <br />
         <h1 className="font-bold text-lg">
@@ -652,8 +658,8 @@ const privacy_policy = () => {
         <p>
           Il vous est conseillé de consulter régulièrement cette politique de
           confidentialité pour tout changement. Les modifications apportées à
-          cette politique de confidentialité entrent en vigueur lorsqu'elles
-          sont publiées sur cette page.
+          cette politique de confidentialité entrent en vigueur
+          lorsqu&apos;elles sont publiées sur cette page.
         </p>
         <br />
         <h1 className="font-bold text-lg">Contactez-nous</h1>

@@ -166,7 +166,7 @@ function Checkout() {
               <p>
                 Nous vous enverrons vos identifiants sur whatsapp et sur la page
                 mes commandes très prochainement. Si vous souhaitez vérifier
-                l'état de votre commande, veuillez Cliquez sur le lien
+                l&apos;état de votre commande, veuillez Cliquez sur le lien
                 ci-dessous.
               </p>
               <Link href="/orders">
