@@ -161,9 +161,6 @@ function Header() {
             <Link href="/categories/playstation">
               <p className="link whitespace-nowrap">PLAYSTATION</p>
             </Link>
-            <Link href="/categories/psn">
-              <p className="link whitespace-nowrap">PSN</p>
-            </Link>
             <Link href="/categories/ps plus">
               <p className="link whitespace-nowrap">PS PLUS</p>
             </Link>
