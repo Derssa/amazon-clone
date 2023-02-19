@@ -199,6 +199,7 @@ function Checkout() {
                 placeholder="Votre whatsapp"
                 onChange={inputChange}
                 defaultValue={client.phone}
+		disabled={paypalVisible}
               />
               <p className="text-xs text-center text-red-700 my-2 font-bold">
                 {err}
