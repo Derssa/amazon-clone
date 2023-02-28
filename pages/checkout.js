@@ -67,7 +67,7 @@ function Checkout() {
     }
     const script = document.createElement("script");
     script.src =
-      "https://www.paypal.com/sdk/js?client-id=AdW-QuMu1Dqi9qX1RDeTiR8Eo-xY8Gvxo7QHBfXdv0-I0dmzCfFbaBYLvJ97WXXpIEKiA5kkHbIPgku1&currency=EUR";
+      "https://www.paypal.com/sdk/js?client-id=AfGWqYQJxFjVCHICSDxO1xmWaO953DnILX-7vKOVNVhKoHpqvv8vzPtoLnuyIWF4ZnHEruaCCq93aETJ&currency=EUR";
     script.type = "text/javascript";
     script.async = true;
     document.body.appendChild(script);
