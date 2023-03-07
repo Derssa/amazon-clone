@@ -55,12 +55,12 @@ function Product({ product }) {
                 ))}
             </div>
             <p className="text-xs my-2 line-clamp-2">{product.details}</p>
-            <div className="mb-4 font-semibold">{product.price} €</div>
+            <div className="mb-4 font-semibold">{product.price} DZD</div>
           </div>
         </a>
       </Link>
       <div className="mt-auto px-5 pb-5">
-        <button
+        {/*<button
           disabled={inBasket}
           onClick={addItemToBasket}
           className={`mt-auto button ${
@@ -69,7 +69,14 @@ function Product({ product }) {
           }`}
         >
           {inBasket ? "Dans votre panier" : "Ajouter au panier"}
-        </button>
+        </button>*/}
+        <Link
+          href={`https://wa.me/212621259039?text=سلام، باغي نشري ${product.name}`}
+        >
+          <a target="_blank">
+            <button className={`mt-auto button`}>Commander sur WhatsApp</button>
+          </a>
+        </Link>
       </div>
     </div>
   );

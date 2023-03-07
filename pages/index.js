@@ -51,7 +51,7 @@ export default function Home({ products, bannerProduct }) {
         {/* banner */}
         <Banner bannerProduct={bannerProduct} />
 
-        {items.length > 0 && (
+        {/*items.length > 0 && (
           <div
             className="sm:hidden flex mb-14 sticky top-20 z-40 h-fit
              bg-white p-5 mx-5 md:mx-10 lg:mt-8 shadow-xl"
@@ -63,7 +63,7 @@ export default function Home({ products, bannerProduct }) {
               </a>
             </Link>
           </div>
-        )}
+        )*/}
 
         {/* feed */}
         <div className="grid grid-flow-row-dense -mt-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:-mt-10 mx-auto">

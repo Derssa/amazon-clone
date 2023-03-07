@@ -44,7 +44,7 @@ function Header() {
         className="sticky top-0 z-50 flex items-center bg-white px-4 flex-grow justify-between
       py-1 md:px-10"
       >
-        <div className="flex items-center flex-grow md:flex-grow-0">
+        <div className="flex items-center justify-center flex-grow md:flex-grow-0">
           <Link href="/">
             <a>
               <Image
@@ -75,7 +75,7 @@ function Header() {
             onClick={submitSearch}
           />
         </div>
-        <div
+        {/*<div
           className="text-black flex items-center text-xs
         space-x-4 sm:space-x-6 sm:mx-6 mx-2 whitespace-nowrap"
         >
@@ -111,10 +111,10 @@ function Header() {
               </div>
             </a>
           </Link>
-        </div>
+        </div>*/}
       </div>
       <header>
-        <div
+        {/*<div
           onClick={!session ? signIn : signOut}
           className={`link p-2 md:hidden flex-grow ${
             session ? "bg-[#383838] text-white" : "bg-[#44de2c]"
@@ -123,7 +123,7 @@ function Header() {
           <p className="font-semibold text-center text-base">
             {session ? `Déconnecter, ${session.user.name}` : "Connexion"}
           </p>
-        </div>
+        </div>*/}
         <div className="p-2 md:hidden bg-gray-100">
           <div
             className="flex flex-row items-center h-10 

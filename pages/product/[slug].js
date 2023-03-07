@@ -108,7 +108,7 @@ function Slug({ product }) {
       "offers": {
         "@type": "Offer",
         "url": "https://cheapgamesnetwork.com/product/${product.slug.current}",
-        "priceCurrency": "EUR",
+        "priceCurrency": "DZD",
         "price": "${product.price}",
         "itemCondition": "https://schema.org/UsedCondition",
         "availability": "https://schema.org/InStock"
@@ -239,7 +239,7 @@ function Slug({ product }) {
                   {product.sizes !== null
                     ? selectedSize.price * quantity
                     : product.price * quantity}{" "}
-                  €
+                  DZD
                 </p>
 
                 {/* Reviews */}
@@ -432,7 +432,7 @@ function Slug({ product }) {
                       </RadioGroup>
                     </div>
                   )}
-                  <button
+                  {/*<button
                     disabled={inBasket}
                     onClick={addItemToBasket}
                     className={`mt-6 w-full ${
@@ -442,7 +442,18 @@ function Slug({ product }) {
                     } border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#111]`}
                   >
                     {inBasket ? "Dans votre panier" : "Ajouter au panier"}
-                  </button>
+                  </button>*/}
+                  <Link
+                    href={`https://wa.me/212621259039?text=سلام، باغي نشري ${product.name}`}
+                  >
+                    <a target="_blank">
+                      <button
+                        className={`mt-6 w-full bg-[#44de2c] hover:bg-[#67fa50] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#111]`}
+                      >
+                        Commander sur WhatsApp
+                      </button>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
