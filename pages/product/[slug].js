@@ -108,7 +108,7 @@ function Slug({ product }) {
       "offers": {
         "@type": "Offer",
         "url": "https://cheapgamesnetwork.com/product/${product.slug.current}",
-        "priceCurrency": "DZD",
+        "priceCurrency": "MAD",
         "price": "${product.price}",
         "itemCondition": "https://schema.org/UsedCondition",
         "availability": "https://schema.org/InStock"
@@ -239,7 +239,7 @@ function Slug({ product }) {
                   {product.sizes !== null
                     ? selectedSize.price * quantity
                     : product.price * quantity}{" "}
-                  DZD
+                  DH
                 </p>
 
                 {/* Reviews */}

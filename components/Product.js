@@ -55,7 +55,7 @@ function Product({ product }) {
                 ))}
             </div>
             <p className="text-xs my-2 line-clamp-2">{product.details}</p>
-            <div className="mb-4 font-semibold">{product.price} DZD</div>
+            <div className="mb-4 font-semibold">{product.price} DH</div>
           </div>
         </a>
       </Link>
